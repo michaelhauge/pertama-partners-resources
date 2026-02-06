@@ -34,7 +34,18 @@ chmod +x scripts/linux/*.sh
 
 ### Windows (PowerShell)
 ```powershell
+# Clone the repo
+git clone https://github.com/michaelhauge/pertama-partners-resources.git
+cd pertama-partners-resources\security-audit-toolkit
+
+# Run full audit (may require admin for some checks)
 .\scripts\windows\full-audit.ps1
+
+# Or with auto-fix
+.\scripts\windows\full-audit.ps1 -Fix
+
+# Dry-run remediation (see what would change)
+.\scripts\windows\remediate.ps1 -DryRun
 ```
 
 ## What This Toolkit Checks
@@ -78,12 +89,12 @@ security-audit-toolkit/
 
 ## Audit Scripts
 
-| Script | Description |
-|--------|-------------|
-| `full-audit.sh` | Run all security checks |
-| `network-audit.sh` | Check network exposure only |
-| `credential-audit.sh` | Check credential security only |
-| `remediate.sh` | Auto-fix common issues |
+| Script (macOS/Linux) | Script (Windows) | Description |
+|---------------------|------------------|-------------|
+| `full-audit.sh` | `full-audit.ps1` | Run all security checks |
+| `network-audit.sh` | `network-audit.ps1` | Check network exposure only |
+| `credential-audit.sh` | `credential-audit.ps1` | Check credential security only |
+| `remediate.sh` | `remediate.ps1` | Auto-fix common issues |
 
 ### Linux Script Features
 - **Firewall detection**: UFW, firewalld, and iptables support
@@ -93,6 +104,16 @@ security-audit-toolkit/
 - **LUKS**: Detects disk encryption status
 - **SSH hardening**: Checks root login, password auth, key-only access
 - **Automatic updates**: Detects unattended-upgrades (Debian/Ubuntu) and dnf-automatic (RHEL/Fedora)
+
+### Windows Script Features
+- **Windows Firewall**: Checks all profiles (Domain, Private, Public)
+- **Windows Defender**: Antivirus status, real-time protection, signature age
+- **Network exposure**: Uses `Get-NetTCPConnection` for port analysis
+- **BitLocker**: Disk encryption status
+- **UAC**: User Account Control verification
+- **Remote Desktop**: RDP status and WinRM checks
+- **Credential Manager**: Enumerates stored Windows credentials
+- **Git integration**: Configures Windows Credential Manager for git
 
 ## Checklists
 
