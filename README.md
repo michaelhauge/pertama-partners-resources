@@ -13,6 +13,7 @@ A collection of tools, templates, and resources for technology consulting and ad
 | [Security Audit Toolkit](./security-audit-toolkit/) | Red team security assessments for developer workstations | Ready |
 | [OpenClaw SEA Guide](./openclaw-sea-guide/) | Complete OpenClaw installation guide for Southeast Asia business leaders | Ready |
 | [n8n SEA Guide](./n8n-sea-guide/) | Workflow automation guide - 90-98% cheaper than Zapier for SEA businesses | Ready |
+| [CRM Migration Guide](./crm-migration-guide/) | CRM comparison & migration guide - Save $200-500/month switching from HubSpot/Salesforce | Ready |
 | *More coming soon...* | | |
 
 ---
@@ -131,6 +132,75 @@ open README.md
 
 ---
 
+## CRM Migration Guide for Southeast Asia
+
+**Comprehensive guide to help SEA businesses migrate from expensive CRMs (HubSpot, Salesforce) to affordable alternatives - Save $200-500/month**
+
+This guide helps you choose the right CRM and migrate your data self-service in 2-4 hours, saving thousands annually.
+
+**Target Audience**:
+- Small to medium businesses (5-50 employees) in SEA
+- Companies spending $150-1,000/month on HubSpot or Salesforce
+- Budget-conscious teams looking for self-service migration
+- Businesses needing WhatsApp integration
+
+**What's Included**:
+- CRM comparison matrix (Zoho, Freshsales, Pipedrive, Attio)
+- Detailed pricing breakdown and 3-year TCO analysis
+- Security documentation for PDPA compliance (SG, MY, ID, TH)
+- Decision framework by industry and team size
+- Python scripts for data cleanup and field mapping
+- Migration validation scripts
+- Export guides (HubSpot, Salesforce)
+- Import guides (Zoho, Freshsales, Pipedrive)
+- Post-migration checklist
+
+**Quick Start**:
+```bash
+cd crm-migration-guide
+
+# 1. Choose your CRM
+open COMPARISON.md  # Compare features and pricing
+
+# 2. Export and clean data
+python3 scripts/data-cleanup.py hubspot_export.csv clean_data.csv
+
+# 3. Map fields
+python3 scripts/field-mapper.py --source hubspot --target zoho
+
+# 4. Follow import guides in guides/ folder
+
+# 5. Validate migration
+bash scripts/migration-validator.sh
+```
+
+**Cost Savings Examples**:
+
+| Migration Path | Old Cost | New Cost | Monthly Savings | Annual Savings |
+|----------------|----------|----------|-----------------|----------------|
+| HubSpot Pro → Zoho CRM | $900/mo | $230/mo | $670/mo | **$8,040/year** |
+| HubSpot Pro → Freshsales | $900/mo | $390/mo | $510/mo | **$6,120/year** |
+| Salesforce → Pipedrive | $800/mo | $290/mo | $510/mo | **$6,120/year** |
+
+**Top CRM Recommendations**:
+- **Best Value**: Zoho CRM Standard ($14/user) - Native WhatsApp integration
+- **Easiest Migration**: Freshsales ($9-39/user) - One-click migration from HubSpot/Salesforce
+- **Best for Sales Teams**: Pipedrive ($14-49/user) - Visual pipeline management
+- **Best for Startups**: Attio ($6-29/user) - Flexible data model, 80% startup discount
+
+**SEA-Specific Features**:
+- WhatsApp Business API integration (Zoho CRM native support)
+- LINE integration guides (for Thailand market)
+- PDPA compliance documentation (Singapore, Malaysia, Thailand)
+- Local payment methods (GIRO, bank transfers)
+- Singapore/Malaysia data center options
+
+**Migration Timeline**: 2-4 hours for self-service migration (10-person team)
+
+[View complete CRM migration guide →](./crm-migration-guide/)
+
+---
+
 ## Repository Structure
 
 ```
@@ -163,6 +233,23 @@ pertama-partners-resources/
 │   ├── guides/                   # Installation guides (9 total)
 │   ├── scripts/                  # Automation scripts
 │   └── templates/                # Docker & env templates
+│
+├── crm-migration-guide/          # CRM Migration Guide for SEA
+│   ├── README.md                 # Main guide
+│   ├── COMPARISON.md             # CRM feature & pricing comparison
+│   ├── PRICING.md                # Detailed pricing & TCO analysis
+│   ├── SECURITY.md               # PDPA compliance & data protection
+│   ├── FAQ.md                    # Common migration questions
+│   ├── guides/                   # Migration guides
+│   │   ├── 01-choosing-crm.md    # Decision framework
+│   │   └── (export/import guides in progress)
+│   ├── scripts/                  # Python & shell scripts
+│   │   ├── data-cleanup.py       # Clean data before migration
+│   │   ├── field-mapper.py       # Map fields between CRMs
+│   │   └── migration-validator.sh # Verify migration success
+│   └── templates/                # Checklists & mapping templates
+│       ├── migration-checklist.md
+│       └── field-mapping.csv
 │
 ├── shared/                        # Shared resources
 │   └── (common templates, scripts)
