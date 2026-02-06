@@ -10,8 +10,8 @@ A comprehensive, cross-platform security audit toolkit for developers, system ad
 ### macOS
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/security-audit-toolkit.git
-cd security-audit-toolkit
+git clone https://github.com/michaelhauge/pertama-partners-resources.git
+cd pertama-partners-resources/security-audit-toolkit
 
 # Run full audit
 chmod +x scripts/macos/*.sh
@@ -20,7 +20,16 @@ chmod +x scripts/macos/*.sh
 
 ### Linux
 ```bash
+# Clone the repo
+git clone https://github.com/michaelhauge/pertama-partners-resources.git
+cd pertama-partners-resources/security-audit-toolkit
+
+# Run full audit
+chmod +x scripts/linux/*.sh
 ./scripts/linux/full-audit.sh
+
+# Or with auto-fix
+./scripts/linux/full-audit.sh --fix
 ```
 
 ### Windows (PowerShell)
@@ -75,6 +84,15 @@ security-audit-toolkit/
 | `network-audit.sh` | Check network exposure only |
 | `credential-audit.sh` | Check credential security only |
 | `remediate.sh` | Auto-fix common issues |
+
+### Linux Script Features
+- **Firewall detection**: UFW, firewalld, and iptables support
+- **Service analysis**: Uses `ss` for network socket inspection
+- **Permission checks**: `stat -c` for cross-distro compatibility
+- **fail2ban**: Checks for SSH brute-force protection
+- **LUKS**: Detects disk encryption status
+- **SSH hardening**: Checks root login, password auth, key-only access
+- **Automatic updates**: Detects unattended-upgrades (Debian/Ubuntu) and dnf-automatic (RHEL/Fedora)
 
 ## Checklists
 
