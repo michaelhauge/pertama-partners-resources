@@ -14,6 +14,7 @@ A collection of tools, templates, and resources for technology consulting and ad
 | [OpenClaw SEA Guide](./openclaw-sea-guide/) | Complete OpenClaw installation guide for Southeast Asia business leaders | Ready |
 | [n8n SEA Guide](./n8n-sea-guide/) | Workflow automation guide - 90-98% cheaper than Zapier for SEA businesses | Ready |
 | [CRM Migration Guide](./crm-migration-guide/) | CRM comparison & migration guide - Save $200-500/month switching from HubSpot/Salesforce | Ready |
+| [SaaS Stack Audit Guide](./saas-optimization-guide/) | Reduce SaaS spend by 30-50% through audit, consolidation, and negotiation - Save $15K-50K/year | Ready |
 | *More coming soon...* | | |
 
 ---
@@ -201,6 +202,79 @@ bash scripts/migration-validator.sh
 
 ---
 
+## SaaS Stack Audit & Optimization Guide
+
+**Comprehensive guide to help businesses reduce SaaS spend by 30-50% - Save $15,000-50,000 per year**
+
+This guide provides a 4-step audit process to eliminate SaaS waste, consolidate overlapping tools, and negotiate better rates.
+
+**Target Audience**:
+- Small to medium businesses (10-100 employees)
+- Companies spending $500-5,000/month on SaaS tools
+- EO/YPO members looking to optimize tech stack
+- Anyone tired of SaaS sprawl and overpriced renewals
+
+**What's Included**:
+- Complete 4-step audit methodology (Discover → Analyze → Optimize → Govern)
+- Tool comparison matrix with 50+ alternatives and cost savings
+- Consolidation strategies (all-in-one platforms vs category champions)
+- Vendor negotiation playbook with proven tactics
+- 5 ready-to-use email templates for negotiations
+- Automated renewal tracking script
+- Governance framework to prevent future sprawl
+- Annual review checklist
+
+**Quick Start**:
+```bash
+cd saas-optimization-guide
+
+# 1. Build inventory
+open guides/01-inventory.md  # Download template, gather data
+
+# 2. Score tools
+open guides/02-usage-analysis.md  # Use 5-dimension framework
+
+# 3. Optimize
+open CONSOLIDATION.md  # Merge overlapping tools
+open NEGOTIATION.md    # Get better pricing
+
+# 4. Prevent future sprawl
+open guides/05-governance.md  # Set up policies
+```
+
+**Expected Savings Examples**:
+
+| Company Size | SaaS Spend | Expected Savings | Annual Savings |
+|--------------|------------|------------------|----------------|
+| 10-25 employees | $800-2,000/mo | $240-800/mo (30-40%) | **$2,880-9,600/year** |
+| 25-50 employees | $2,000-4,000/mo | $800-1,600/mo (40-45%) | **$9,600-19,200/year** |
+| 50-100 employees | $4,000-8,000/mo | $1,600-3,500/mo (40-50%) | **$19,200-42,000/year** |
+
+**Top Savings Opportunities**:
+- **Cancel unused tools**: 0% utilization, still billing ($200-500/month typical)
+- **Consolidate overlaps**: 3 project management tools → 1 ($400-1,200/month saved)
+- **Negotiate renewals**: 15-30% discount on major tools ($300-1,000/month saved)
+- **All-in-one platforms**: Replace 10-40 tools with Zoho ONE/Microsoft 365 (60-80% savings)
+
+**Common Consolidations**:
+- Asana + Monday + Trello → ClickUp (Save $400/month)
+- Zendesk + Intercom → Freshdesk (Save $1,260/month)
+- Slack + Zoom → Microsoft Teams (Save $295/month, already paying for Microsoft 365)
+- HubSpot → Freshsales (Save $510/month)
+
+**Time Required**: 8-16 hours over 2-4 weeks for full audit
+**ROI**: 10-20x the time invested
+**Ongoing Maintenance**: 2-4 hours/quarter to sustain savings
+
+**Automation Tools**:
+- `renewal-tracker.py` - Automated email reminders 60 days before renewals
+- CSV templates for inventory and renewal tracking
+- Scoring framework spreadsheet
+
+[View complete SaaS optimization guide →](./saas-optimization-guide/)
+
+---
+
 ## Repository Structure
 
 ```
@@ -250,6 +324,27 @@ pertama-partners-resources/
 │   └── templates/                # Checklists & mapping templates
 │       ├── migration-checklist.md
 │       └── field-mapping.csv
+│
+├── saas-optimization-guide/      # SaaS Stack Audit & Optimization
+│   ├── README.md                 # Main guide & quick start
+│   ├── AUDIT-PROCESS.md          # 4-step methodology
+│   ├── ALTERNATIVES.md           # 50+ tool alternatives with savings
+│   ├── CONSOLIDATION.md          # Strategic consolidation approaches
+│   ├── NEGOTIATION.md            # Vendor negotiation playbook
+│   ├── FAQ.md                    # Common questions
+│   ├── guides/                   # Step-by-step guides (6 total)
+│   │   ├── 01-inventory.md       # Build SaaS inventory
+│   │   ├── 02-usage-analysis.md  # Score tools (5-dimension framework)
+│   │   ├── 03-consolidation.md   # Merge overlapping tools
+│   │   ├── 04-negotiation.md     # Negotiate better rates
+│   │   ├── 05-governance.md      # Prevent future sprawl
+│   │   └── 06-annual-review.md   # Yearly audit checklist
+│   ├── scripts/                  # Automation scripts
+│   │   └── renewal-tracker.py    # Automated renewal reminders
+│   └── templates/                # Tracking templates
+│       ├── saas-inventory.csv    # Inventory spreadsheet
+│       ├── renewal-calendar.csv  # Renewal tracking
+│       └── negotiation-emails.md # 5 email templates
 │
 ├── shared/                        # Shared resources
 │   └── (common templates, scripts)
