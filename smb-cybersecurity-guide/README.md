@@ -274,6 +274,142 @@ Business endpoint protection costs $5-12/user/month and provides:
 
 ---
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA small businesses implementing cybersecurity. Names and details are anonymized.
+
+### Case Study 1: Malaysian Retail Chain (35 Employees, 4 Locations)
+
+**Company**: Fashion retailer with 4 stores in KL and Penang, plus Shopee/Lazada e-commerce. 35 employees across retail, warehouse, and admin. No IT person — the owner's nephew "handled tech."
+
+**The problem**: A ransomware attack encrypted the POS system and inventory database on a Friday evening. Attackers demanded RM 50,000 (~$11K USD). No backups existed. The owner lost 3 days of sales ($8K revenue) while scrambling to recover.
+
+**What they tried**: After the attack, followed the 90-Day Security Roadmap. Started with Phase 1 (password manager + MFA) and Phase 3 (backup system). Budget: RM 2,500/month (~$550 USD) for 35 users.
+
+**What went wrong**:
+- Password manager rollout was chaotic — store staff shared one login for the POS system (4 people, 1 password). The password manager required individual accounts, which meant creating email accounts for every staff member first ($6/user/month for Google Workspace, unplanned)
+- MFA caused daily frustration at the stores — staff forgot phones, ran out of battery, or couldn't receive SMS in the basement stockroom. Switched from SMS MFA to hardware security keys (YubiKey, $25 each) for POS terminals after 3 weeks of complaints
+- The backup system worked perfectly for 6 weeks, then silently failed because the cloud storage filled up (free tier). Nobody noticed for 2 weeks until a manual check
+- Staff ignored phishing training — retail employees considered it "not my job." The owner had to make it mandatory and tie it to quarterly bonuses to get 80% completion
+
+**Actual results** (Month 3):
+- All 4 POS systems on individual accounts with MFA (hardware keys at registers)
+- Automated nightly backups to Backblaze B2 ($7/month, 500GB) with email alerts
+- Password manager adopted by admin staff (12/12) but only 15/23 retail staff
+- No security incidents in 90 days (previously: 3 phishing attempts, 1 ransomware)
+- Cost: RM 2,800/month (~$620) including Google Workspace, Backblaze, endpoint protection
+- But: Retail staff adoption is still a struggle — some share passwords verbally despite the policy
+
+**Key takeaway**: For retail/multi-location businesses, hardware security keys work better than phone-based MFA for shared terminals. Budget for Google Workspace or Microsoft 365 first — you can't do password managers or MFA without individual email accounts for every employee.
+
+---
+
+### Case Study 2: Singapore Professional Services Firm (18 Employees)
+
+**Company**: Recruitment agency placing candidates in banking and tech. 18 employees, all office-based. Handles sensitive candidate data (resumes, salary details, work permits, NRIC numbers) — a PDPA compliance obligation.
+
+**The problem**: A recruiter fell for a phishing email disguised as a LinkedIn InMail. The attacker gained access to the recruiter's Google Workspace account, downloaded 2,000+ candidate resumes with personal details, and sent phishing emails to 300 candidates from the compromised account. Several candidates reported the breach to PDPC.
+
+**What they tried**: After the incident, engaged a small cybersecurity consultancy ($5K for incident response), then implemented the 90-Day Roadmap. Prioritized email security (DMARC, SPF, DKIM), MFA, and employee training.
+
+**What went wrong**:
+- PDPC investigation was stressful and expensive — legal counsel cost $15K for the mandatory data breach notification. The fine was $20K (low end, but still painful for a small firm)
+- Email security setup (DMARC) broke outgoing emails for 2 days because the DNS records were misconfigured — clients and candidates couldn't receive emails during a critical hiring week
+- Advanced phishing simulation revealed that 6 of 18 employees (33%) clicked malicious links in the first test. Three were senior recruiters. The owner was shocked — these were experienced professionals
+- Google Workspace Advanced Protection required hardware security keys ($25 each) — staff initially resisted carrying "another thing" until the owner demonstrated how easy it was
+
+**Actual results** (Month 3):
+- DMARC/SPF/DKIM fully configured (no more spoofed emails from their domain)
+- MFA on all accounts (hardware keys for all 18 staff after initial resistance)
+- Phishing click rate: 33% → 6% after 3 rounds of simulation training
+- Google Workspace security settings hardened (OAuth app restrictions, mobile device management)
+- PDPA compliance documentation completed (data inventory, processing activities, retention policy)
+- Cost: $380/month ongoing (endpoint protection, backup, security training platform)
+- But: The PDPC fine and legal costs totaled $40K — a painful lesson that could have been prevented with $4K/year in security tools
+
+**Key takeaway**: The cost of a breach ($40K+ in fines, legal, and remediation for this small firm) dwarfs the cost of prevention ($4-5K/year). If you handle personal data (recruiters, accountants, healthcare), PDPA compliance isn't optional — and the PDPC will investigate if candidates or customers report you.
+
+---
+
+### Cross-Case Patterns
+
+| Pattern | Evidence |
+|---------|----------|
+| Individual accounts are a prerequisite | MY: had to create Google Workspace accounts before password manager; SG: needed per-user accounts for MFA |
+| Staff adoption requires incentives | MY: tied training to bonuses; SG: owner demonstrated security keys personally |
+| Backup systems fail silently | MY: cloud storage filled up, nobody noticed for 2 weeks |
+| Phishing hits experienced people too | SG: senior recruiters clicked 33% of test phishing; not just "naive" staff |
+| Breach costs dwarf prevention costs | SG: $40K breach vs $5K/year prevention; MY: $8K lost revenue from 3-day ransomware |
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "Staff refuse to use the password manager — they say it's too complicated"
+
+**Symptom**: You rolled out 1Password or Bitwarden, but staff continue using their old passwords, sticky notes, or browser-saved passwords. Adoption is below 50%.
+
+**Likely cause**: Staff see the password manager as extra work, not as something that makes their life easier. The initial setup (importing passwords, learning the interface) is a friction barrier.
+
+**Fix**:
+1. Do a 30-minute hands-on session (not a video — actually sit with each person and set up their vault)
+2. Start with one use case they care about (e.g., "never type your Shopee seller login again")
+3. Disable browser password saving on company devices (forces usage)
+4. Make it the CEO's tool first — if the boss uses it, staff follow
+
+**Prevention**: Roll out to the most tech-savvy 3-4 employees first. Let them become advocates. Then roll out company-wide with peer support, not top-down mandates.
+
+---
+
+### "We got hit by ransomware — are our backups safe?"
+
+**Symptom**: Files are encrypted, ransom note demands payment, and you're not sure if your backups are intact or if the attacker also encrypted those.
+
+**Likely cause**: Ransomware increasingly targets backup files and connected drives. If your backup drive was connected to the infected machine, it may also be encrypted.
+
+**Fix**:
+1. **Do NOT pay the ransom** — there's no guarantee you'll get your data back, and it funds more attacks
+2. Disconnect all affected machines from the network immediately (Wi-Fi and ethernet)
+3. Check cloud backups from a clean device (phone or unaffected computer) — cloud backups (Backblaze, Google Drive) are usually safe because they require separate authentication
+4. If backups are intact: wipe affected machines, reinstall OS, restore from backup
+5. If no backups exist: contact a data recovery specialist ($2K-$10K) — not guaranteed but sometimes possible
+
+**Prevention**: Follow the 3-2-1 rule: 3 copies of data, on 2 different media types, with 1 offsite (cloud). Test your backup restoration monthly — a backup you've never tested is not a backup. Use immutable backups (Backblaze B2 with Object Lock) so ransomware can't delete them.
+
+---
+
+### "I completed the assessment and scored 25/100 — should I panic?"
+
+**Symptom**: Your security assessment score is alarmingly low. You feel like everything needs to be fixed immediately and the task is overwhelming.
+
+**Likely cause**: Most small businesses with no formal security program score 15-35/100 on first assessment. This is normal. The score reflects the absence of formal controls — not that you're actively being attacked.
+
+**Fix**:
+1. Don't try to fix everything at once — prioritize by impact
+2. Focus on Phase 1 Quick Wins first: password manager + MFA alone can take you from 25 to 50/100
+3. Schedule improvements over 90 days, not 9 days
+4. Track your score weekly — seeing 25 → 35 → 50 → 65 is motivating
+
+**Prevention**: Reframe the score as a starting point, not a judgment. Every business starts somewhere. A company at 25/100 that improves to 70/100 in 90 days is in a much better position than one that scores 60/100 and never improves.
+
+---
+
+### "Our cyber insurance application was denied — what now?"
+
+**Symptom**: You applied for cyber insurance and the insurer said you don't meet their minimum security requirements, or quoted a premium that's 3-4x what you expected.
+
+**Likely cause**: Cyber insurers now require basic security controls (MFA, endpoint protection, backups, employee training) before issuing policies. If you can't demonstrate these, you'll be denied or face very high premiums.
+
+**Fix**:
+1. Ask the insurer exactly which controls they require — most provide a checklist
+2. Implement Phase 1 and Phase 2 of this guide (typically 30 days) — this usually meets insurer minimums
+3. Re-apply with evidence (screenshots of MFA setup, backup configuration, endpoint protection console)
+4. Shop around — requirements vary between insurers. Try CyberEdge, Coalition, or Chubb
+
+**Prevention**: Implement basic security controls before applying for insurance. Having MFA, endpoint protection, and automated backups typically reduces premiums by 30-50% and avoids denial. Think of it like car insurance — having a clean driving record gets you better rates.
+
+---
+
 ## Next Steps
 
 Choose your path based on your situation:
