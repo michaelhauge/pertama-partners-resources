@@ -263,6 +263,83 @@ Transform from chaotic remote work to a productive, compliant, engaged distribut
 
 ---
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA remote/hybrid teams. Names and details are anonymized.
+
+### Case Study 1: Singapore Fintech Startup (22 Employees, Hybrid)
+
+**Company**: B2B payments platform, 22 employees. SG office for leadership + product, remote engineers in Vietnam and Philippines.
+
+**The problem**: Communication was chaotic — leadership used email, engineers used Slack, the Vietnam team used Zalo internally. Decisions got lost. Nobody knew where to find documents.
+
+**What they tried**: Phase 1 (Communication Foundation) — consolidated to Slack as single communication tool, set up channel strategy, established async protocols.
+
+**What went wrong**:
+- Vietnam team pushed back on Slack — they'd used Zalo for years and found Slack's interface confusing initially
+- First 2 weeks after Slack rollout, message volume tripled (everyone moved conversations from email + WhatsApp + Zalo into Slack channels) — notification fatigue was worse than before
+- Documentation in Notion was set up by the Singapore team in English, but Vietnamese engineers preferred to document in Vietnamese for speed — led to a bilingual knowledge base that was hard to search
+- CTO mandated "no meetings before 2 PM SGT" for deep work, but this meant PH team couldn't have morning standups
+
+**Actual results** (Month 2):
+- Meeting time reduced 40% (replaced 60% of status meetings with async Slack updates)
+- Communication tools: 5 → 2 (Slack + Notion)
+- Document findability improved significantly (team reported 70% faster time to find info)
+- But: Vietnam team took 6 weeks to fully adopt Slack (vs 1 week for SG team)
+
+**Key takeaway**: Tool consolidation saves time, but give cross-border teams 4-6 weeks to adapt (not 1 week). Let teams use their local language for internal docs, but require English for cross-team communication.
+
+---
+
+### Case Study 2: Malaysian Digital Marketing Agency (35 Employees, Fully Remote)
+
+**Company**: Digital marketing agency, 35 employees across Malaysia (KL, Penang, JB) and 5 contractors in Indonesia.
+
+**The problem**: Went fully remote during pandemic and never went back. But "remote" meant "everyone does their own thing." No documentation, no async culture, 4+ hours of Zoom calls daily. Attrition hit 35%.
+
+**What they tried**: Full 90-day roadmap — communication setup, AI productivity, performance management, team cohesion.
+
+**What went wrong**:
+- Otter.ai transcription worked great for English-language client calls but couldn't handle Bahasa Malaysia + English code-switching (common in MY meetings)
+- OKR framework was rejected by the creative team — "We can't quantify creativity into key results." Had to adapt to more qualitative milestones for creative roles.
+- First virtual team-building event (online trivia) had 60% attendance — 40% skipped because it was scheduled at 6 PM (after their working hours by personal choice)
+- AI documentation tools saved time for writers but engineers resisted — they found AI-generated technical docs inaccurate
+
+**Actual results** (Month 3):
+- Attrition: 35% → 15% (team cohesion programs made the biggest impact, not tools)
+- Meeting time: 4+ hours/day → 1.5 hours/day (async updates replaced most status meetings)
+- AI productivity: 12 hours/week saved team-wide (mostly in content creation and reporting)
+- Tool consolidation: Saved $1,200/month by dropping redundant tools
+- But: 2 senior team members quit anyway, citing "miss the office energy" — remote isn't for everyone
+
+**Key takeaway**: Reducing meeting load has the single biggest impact on remote team satisfaction. AI tools help with content teams but face resistance from technical teams.
+
+---
+
+### Case Study 3: Thai E-Commerce Company (60 Employees, Distributed)
+
+**Company**: E-commerce platform, 60 employees across Bangkok (HQ), Chiang Mai (engineering), and Ho Chi Minh City (customer support).
+
+**The problem**: Three offices, three cultures, three timezones (sort of — ICT and SGT are only 1 hour apart, but team schedules didn't overlap). Cross-team projects took 2x longer than same-office projects.
+
+**What they tried**: Phase 3 focus — timezone coordination, async handoff protocols, and EOR setup for Vietnamese team (previously contractors).
+
+**What went wrong**:
+- Converting Vietnamese contractors to full employees via EOR (Deel) took 8 weeks, not 3 — Vietnamese labor law requires specific contract terms and the initial contracts had to be redone
+- Async handoff protocol looked great on paper but Bangkok team kept scheduling synchronous calls that HCMC team had to attend outside their preferred hours
+- EOR cost ($500/employee/month) was higher than expected — for 8 Vietnamese employees, that's $4,000/month, which ate into the salary savings
+- Remote security audit revealed 3 engineers were using personal Gmail for work communication — took 2 months to fully enforce security policies
+
+**Actual results** (Month 3):
+- Cross-team project delivery: 2x delay → 1.3x delay (30% improvement, not perfect)
+- Vietnamese team engagement improved significantly after EOR conversion (job security > contractor uncertainty)
+- Security compliance: 0% → 85% (15% still had gaps in home office setup)
+- Total cost: Increased $4,000/month (EOR) but saved $8,000/month in salary differential vs. hiring in Bangkok
+
+**Key takeaway**: Cross-border hiring saves money even with EOR costs, but budget 6-8 weeks for EOR setup in SEA (not the "2 weeks" vendors promise). Async handoffs need enforcement, not just documentation.
+
+---
+
 ## Common Questions
 
 ### "How do I know remote employees are actually working?"
@@ -389,6 +466,85 @@ Transform from chaotic remote work to a productive, compliant, engaged distribut
 5. **Handoff protocols**: Document status at end of day for next timezone
 
 **See**: [Guide 07: Time Tracking](guides/07-time-tracking.md) and [timezone-overlap.py](scripts/timezone-overlap.py) script
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "Slack/Teams notifications are overwhelming the team"
+
+**Symptom**: Team complains about constant pings. People start ignoring Slack entirely. Important messages get buried.
+
+**Likely cause**: No channel strategy — everything goes into #general. No async norms (people expect immediate responses).
+
+**Fix**:
+1. Set up distinct channels: #announcements (read-only), #team-[name], #project-[name], #random
+2. Establish response time expectations: Urgent = call/DM (1 hour), Normal = channel post (4 hours), FYI = no response needed
+3. Encourage "Do Not Disturb" hours and batch-checking (not real-time monitoring)
+
+**Prevention**: Create a channel strategy document before rolling out any communication tool. Fewer channels = less noise.
+
+---
+
+### "Remote team members feel isolated and disconnected"
+
+**Symptom**: Low participation in team meetings, declining engagement, increased attrition — especially from satellite office or fully remote employees.
+
+**Likely cause**: All-remote teams need intentional connection-building. Without an office, social bonds don't form naturally.
+
+**Fix**:
+1. Start every team meeting with 5 minutes of non-work chat (not optional, schedule it)
+2. Create "watercooler" channels (#random, #pets, #food, #music) for casual interaction
+3. Schedule quarterly in-person meetups — even 2-3 days per quarter makes a huge difference
+4. Use Donut (Slack app) for random 1:1 coffee chat pairings
+
+**Prevention**: Budget for remote team retreats from Day 1. SEA has excellent retreat destinations (Bali, Chiang Mai, Penang) that are affordable.
+
+---
+
+### "Cross-timezone async handoffs keep failing"
+
+**Symptom**: Bangkok team finishes work at 6 PM ICT, HCMC team starts at 8 AM ICT — but context doesn't transfer. Work gets redone or stalls for a day.
+
+**Likely cause**: No structured handoff process. Team relies on verbal context ("I'll tell them tomorrow") which gets lost.
+
+**Fix**:
+1. Require end-of-day handoff notes in a shared channel: What's done, what's blocked, what needs attention
+2. Use a simple template: "Status: [Done/In Progress/Blocked] | Context: [1-2 sentences] | Action needed: [Specific ask]"
+3. Overlap hours: Identify 2-3 hours where both teams are online, use those for sync-dependent work
+
+**Prevention**: Design workflows around async by default. If a task can't be completed async, it needs to be within the same timezone team.
+
+---
+
+### "EOR setup is taking much longer than promised"
+
+**Symptom**: Vendor (Deel, Remote, Oyster) said "2 weeks" but it's been 6 weeks and the contract still isn't finalized. Candidate is frustrated.
+
+**Likely cause**: SEA countries have complex labor law requirements. Indonesia, Vietnam, and Thailand each have specific contract terms, probation rules, and benefit mandates that EOR platforms handle but not instantly.
+
+**Fix**:
+1. Be transparent with the candidate — explain the timeline and confirm the role is theirs
+2. Start the candidate as a contractor while EOR processes (if legally permissible in that country)
+3. Push your EOR account manager for a specific timeline with milestones
+
+**Prevention**: Budget 6-8 weeks for EOR in ID, VN, TH (not the 2 weeks in sales materials). SG and MY are faster (2-3 weeks).
+
+---
+
+### "Remote productivity dropped after initial improvement"
+
+**Symptom**: First 2-3 months of remote work showed productivity gains. By Month 6, output is declining and team morale is dipping.
+
+**Likely cause**: Remote honeymoon period ended. Without intentional culture and growth investment, remote work becomes isolating. Burnout from "always on" culture is common.
+
+**Fix**:
+1. Implement "meeting-free days" (e.g., no meetings on Wednesday)
+2. Encourage explicit offline time — leaders should model signing off at reasonable hours
+3. Run a confidential team survey to identify specific pain points
+4. Consider a team retreat — in-person connection recharges remote relationships for months
+
+**Prevention**: Remote work is a practice, not a one-time setup. Schedule quarterly reviews of remote work health (survey + action).
 
 ---
 

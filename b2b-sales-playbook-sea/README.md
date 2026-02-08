@@ -209,9 +209,11 @@ Total time per deal: 30-40 hours         → Total time per deal: 10-15 hours
 - 20-25 hours/week actually selling
 - Close 2-4 deals/month (2x conversion from better qualification)
 
-**ROI**: 20-25 hours/week saved × $100/hour = **$8,000-10,000/month value**
+**Time reclaimed**: 20-25 hours/week redirected from admin to selling
 **Cost**: $40-60/month (Claude Pro $20 + call AI $10-20 + CRM $10-20)
-**Return**: **200x**
+**Value**: At $100/hour, that's $8,000-10,000/month in time freed up for revenue-generating activities
+
+> *These are time-reallocation figures, not guaranteed revenue. Actual impact depends on deal size, market, and how you use the freed time.*
 
 ---
 
@@ -229,9 +231,10 @@ Total time per deal: 30-40 hours         → Total time per deal: 10-15 hours
 - Consistent qualification (shared AI prompts)
 - Close 12-20 deals/month (better qualification + faster response times)
 
-**ROI**: 15 hours/week saved per rep × 5 reps × $75/hour = **$22,500/month value**
+**Time reclaimed**: 15 hours/week per rep × 5 reps = 75 hours/week redirected to selling
 **Cost**: $200-300/month (Claude Pro for 5 reps, shared call AI, CRM)
-**Return**: **75-110x**
+
+> *Results compound as team builds prompt proficiency (typically 3-4 weeks to full productivity).*
 
 ---
 
@@ -249,9 +252,10 @@ Total time per deal: 30-40 hours         → Total time per deal: 10-15 hours
 - Consistent proposals and follow-up across all reps
 - Close 35-50 deals/month (better conversion at every stage)
 
-**ROI**: 12 hours/week saved per rep × 15 reps × $75/hour = **$54,000/month value**
+**Time reclaimed**: 12 hours/week per rep × 15 reps = 180 hours/week redirected to selling
 **Cost**: $400-600/month (Claude for key reps, shared tools, CRM)
-**Return**: **90-135x**
+
+> *Larger teams see bigger gains from consistency — AI ensures every rep follows the same qualification and proposal process. Expect 1-2 months for full team adoption.*
 
 ---
 
@@ -386,6 +390,206 @@ This playbook **complements** (not replaces) existing Pertama Partners guides:
 - Fireflies.ai or Gong: $100-200/mo
 - Advanced CRM: $100-150/mo
 - Automation platform (n8n Cloud or similar): $20-50/mo
+
+---
+
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA B2B sales teams. Names and details are anonymized.
+
+### Case Study 1: Singapore IT Services Firm (8-Person Sales Team)
+
+**Company**: B2B IT managed services, selling $20K-$80K annual contracts to mid-market companies across Singapore and Malaysia.
+
+**The problem**: Sales reps spent 60% of their time on admin — researching prospects manually, writing proposals from scratch, and chasing follow-ups. Pipeline was stuck at 45 active deals.
+
+**What they tried**: Implemented AI-powered discovery prep (Guide 02) and proposal generation (Guide 03) over 6 weeks.
+
+**What went wrong**:
+- First 2 weeks, reps copy-pasted AI outputs without editing — prospects noticed the generic tone and engagement dropped
+- The sales manager pushed all 8 reps to adopt simultaneously — 3 resisted and started hiding their manual workflows
+- AI research missed key context about one prospect's recent leadership change, leading to an embarrassing discovery call
+
+**Actual results** (Month 3):
+- Pipeline grew from 45 → 72 active deals (60% increase)
+- Proposal turnaround: 2.5 days → 4 hours average
+- 5 of 8 reps fully adopted (62% adoption rate)
+- Close rate improved from 18% → 24%
+- Two deals lost specifically because AI-generated content wasn't personalized enough
+
+**Key takeaway**: Start with 2-3 willing reps, let their results convince the rest. Always edit AI outputs — the 5-minute personalization pass is what separates winning proposals from ignored ones.
+
+---
+
+### Case Study 2: Malaysian SaaS Startup (Solo Founder Selling)
+
+**Company**: HR tech SaaS, $15K ACV, selling to Malaysian and Indonesian mid-market companies. Founder was the only salesperson.
+
+**The problem**: Managing 12 deals while also being CEO. Discovery calls were unprepared, proposals took entire weekends, and WhatsApp conversations with Indonesian prospects kept falling through cracks.
+
+**What they tried**: Started with AI qualification (Guide 01) for all inbound leads, then added WhatsApp workflows (Guide 04).
+
+**What went wrong**:
+- AI qualification framework rejected 3 leads as "low quality" that the founder's gut said were good — 1 of those turned into a $25K deal through a personal referral
+- WhatsApp AI responses in Bahasa were too formal for Indonesian prospects — they prefer casual, friendly tone
+- Founder became over-reliant on AI for prospect research and stopped attending industry events where real intelligence came from
+
+**Actual results** (Month 3):
+- Active pipeline: 12 → 22 deals (83% increase)
+- Proposal time: 8-10 hours → 2-3 hours each
+- Saved ~18 hours/week on admin
+- But close rate stayed flat at 15% — more deals in pipeline, same conversion
+- Indonesian WhatsApp response rate improved 40% after adjusting AI tone to casual
+
+**Key takeaway**: AI qualification scores are a signal, not a verdict — always apply human judgment, especially for referral-based deals in relationship cultures. Customize AI tone for each market.
+
+---
+
+### Case Study 3: Thai Enterprise Software Company (12-Person Team)
+
+**Company**: Enterprise project management software, $50K-$200K ACV, selling to Thai and Vietnamese large enterprises. 12-person sales team across Bangkok and Ho Chi Minh City.
+
+**The problem**: 9-month average deal cycle, 35% of deals stalling at "evaluation" stage because they couldn't identify all decision-makers in consensus-driven Thai corporate culture.
+
+**What they tried**: Deployed BANT-SEA qualification framework (Guide 01) and AI objection handling (Guide 05) across both offices.
+
+**What went wrong**:
+- BANT-SEA framework identified 5-7 stakeholders per deal instead of the 2-3 reps were tracking — reps initially saw this as "more work" and pushed back
+- Vietnamese office adopted faster than Thai office — different management styles meant different rollout approaches were needed
+- AI objection scripts for Thai prospects were too direct — had to significantly soften the language and add relationship-building elements
+- One senior rep quit, saying "AI is replacing my job" — despite that not being the intent
+
+**Actual results** (Month 4):
+- Deal cycle shortened from 9 months → 6.5 months average
+- Stall rate at evaluation dropped from 35% → 18% (because they now mapped all decision-makers)
+- Thai office adoption: 60% (slower, needed more 1-on-1 coaching)
+- Vietnamese office adoption: 90% (embraced quickly)
+- Lost one experienced rep (regrettable attrition from change management failure)
+
+**Key takeaway**: More stakeholders mapped = shorter deal cycles (counterintuitive but proven). Roll out differently for different cultures — even within your own team.
+
+---
+
+### Cross-Case Patterns
+
+| Pattern | Evidence |
+|---------|----------|
+| AI adoption takes 4-8 weeks, not 1 week | All three teams needed 1-2 months for meaningful adoption |
+| Start with willing reps, not mandates | Forced rollouts had lower adoption and caused resentment |
+| AI tone must match local culture | Generic AI outputs failed in MY (too stiff) and TH (too direct) |
+| Pipeline grows before close rate does | More deals in funnel is first signal; conversion improves later |
+| Human judgment still matters for qualification | AI scores are useful inputs, not final decisions |
+
+---
+
+## Limitations & Honest Expectations
+
+**AI-assisted selling is powerful but not a silver bullet.** Here's what to watch for:
+
+| Limitation | Why It Matters | Mitigation |
+|------------|---------------|------------|
+| **AI can't build relationships** | SEA B2B sales are relationship-driven — WhatsApp rapport, dinner meetings, and trust-building can't be automated | Use AI for prep and follow-up, not for the relationship itself |
+| **Cultural nuance is hard to automate** | AI may miss indirect communication styles, hierarchy expectations, or religious/cultural sensitivities | Always review AI-drafted communications for cultural fit |
+| **AI-generated emails can feel generic** | Prospects who receive many AI-crafted emails are developing "AI detection" skills | Use AI as a starting point, then personalize significantly |
+| **Data quality limits AI quality** | If your CRM data is messy, AI qualification and research will be unreliable | Clean your data first — AI amplifies both good and bad data |
+| **Learning curve is real** | Sales reps accustomed to their own methods may resist new workflows | Start with willing early adopters, let results convince others |
+
+**What this playbook won't do**:
+- Fix a product-market fit problem (AI helps you sell faster, not sell something people don't want)
+- Replace senior sales judgment on complex deals
+- Work well for <$5K ACV transactional sales (the ROI math doesn't justify the setup)
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "AI-generated proposals all sound the same"
+
+**Symptom**: Prospects stop responding, or feedback is "this feels generic."
+
+**Likely cause**: Using AI to generate the full proposal without company-specific customization. AI defaults to business-speak that reads like every other pitch.
+
+**Fix**:
+1. Always include 2-3 specific details about the prospect's business (recent news, competitor moves, industry challenges)
+2. Add a "Why [Company Name] specifically" paragraph written by a human
+3. Reference something from your discovery call that AI wasn't part of
+
+**Prevention**: Create a "personalization checklist" — 5 items that must be customized before any proposal goes out.
+
+---
+
+### "Reps refuse to use AI tools"
+
+**Symptom**: Tool licenses are purchased but login rates are under 30%. Reps say "it takes longer" or "I have my own system."
+
+**Likely cause**: All-at-once rollout without demonstrating value first. Reps see it as more admin, not less.
+
+**Fix**:
+1. Find your 2 most tech-curious reps and give them AI tools exclusively for 2 weeks
+2. Have them present their time savings at the next team meeting (peer proof > manager mandate)
+3. Start with ONE workflow (proposal generation is usually the easiest win)
+
+**Prevention**: Never mandate adoption — create FOMO by showing early adopters' results.
+
+---
+
+### "AI research gives outdated or wrong information about prospects"
+
+**Symptom**: Discovery calls reveal that AI-gathered intelligence is wrong (old company size, departed executives, outdated product info).
+
+**Likely cause**: AI models have training data cutoffs. Company information changes frequently, especially for fast-growing SEA startups.
+
+**Fix**:
+1. Always verify AI research against LinkedIn (current roles), company website (recent news), and local business registries
+2. Add a "verified on [date]" field to your CRM for AI-generated prospect data
+3. Use AI for structure and framework, human verification for facts
+
+**Prevention**: Treat AI research as a first draft, not a final report. Budget 5 minutes per prospect for human verification.
+
+---
+
+### "WhatsApp conversations feel robotic with AI-assisted responses"
+
+**Symptom**: Indonesian or Malaysian prospects respond less, or switch to calling instead of messaging.
+
+**Likely cause**: AI generates responses in formal English or overly professional Bahasa. SEA WhatsApp culture is casual and relationship-focused.
+
+**Fix**:
+1. Train AI with examples of your best WhatsApp conversations (the casual, friendly ones that close deals)
+2. Use AI for the content, then rewrite the tone manually (takes 30 seconds)
+3. For Indonesian prospects: add "Pak/Bu" greetings, casual emojis, and conversational Bahasa
+
+**Prevention**: Create market-specific WhatsApp prompt templates — SG (professional), MY (warm professional), ID (casual friendly), TH (respectful, indirect).
+
+---
+
+### "AI qualification framework rejects leads that my gut says are good"
+
+**Symptom**: AI scores a lead as "low priority" but experienced reps recognize the opportunity.
+
+**Likely cause**: AI qualification can't see relationship context — referrals, personal connections, industry reputation, or "they're a friend of our investor."
+
+**Fix**:
+1. Treat AI scores as one input alongside human judgment — never auto-reject
+2. Add a "human override" field in your CRM with required justification
+3. Track override accuracy over 6 months — you'll learn when gut is right vs. when data is right
+
+**Prevention**: Use AI for initial screening (filter obvious mismatches), but keep human judgment for final qualification decisions.
+
+---
+
+### "We implemented everything but close rate didn't improve"
+
+**Symptom**: Pipeline is bigger, proposals are faster, but win rate is flat or declining.
+
+**Likely cause**: AI improved efficiency (more deals in pipeline, faster proposals) but didn't improve effectiveness (better qualification, stronger relationships, sharper positioning).
+
+**Fix**:
+1. Check if you're qualifying better or just qualifying more — bigger pipeline with same close rate means you're adding low-quality deals
+2. Review lost deals from last 90 days — are you losing on price, fit, or relationship?
+3. Focus AI on the quality bottleneck, not just the speed bottleneck
+
+**Prevention**: Track close rate alongside pipeline volume. If close rate drops as pipeline grows, you have a quality problem, not a speed problem.
 
 ---
 

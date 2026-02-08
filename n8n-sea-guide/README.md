@@ -206,6 +206,23 @@ This is a **self-service guide** created by [Pertama Partners](https://pertama.p
 - **n8n Community**: https://community.n8n.io
 - **n8n GitHub**: https://github.com/n8n-io/n8n
 
+## Limitations & Honest Expectations
+
+**n8n is excellent for automation, but it's not the right tool for everyone:**
+
+| Consideration | Details |
+|---------------|---------|
+| **Technical skill required** | Self-hosting requires basic server management (SSH, Docker, backups). If "SSH into a server" sounds intimidating, use n8n Cloud or consider Zapier instead. |
+| **Maintenance overhead** | Self-hosted n8n needs updates, monitoring, and occasional debugging. Budget 2-4 hours/month for maintenance. |
+| **Not truly "set and forget"** | APIs change, rate limits hit, edge cases appear. Complex workflows need periodic review and fixes. |
+| **Learning curve** | Expect 1-2 weeks to become comfortable, 1-2 months for advanced workflows. It's simpler than coding but more complex than Zapier. |
+| **When to use Zapier instead** | If you need <5 simple automations and your team isn't technical, Zapier's simplicity may be worth the higher cost. |
+| **Reliability** | Self-hosted means *you* are responsible for uptime. If a workflow fails at 2am, there's no support team to fix it. Consider n8n Cloud for business-critical automations. |
+
+**Bottom line**: n8n is the best value for technical teams running 10+ automations. For non-technical teams with simple needs, the cost savings may not justify the learning curve.
+
+---
+
 ### Contributing
 
 Found an error or have a suggestion? Submit a pull request or open an issue on this repo.

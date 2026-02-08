@@ -334,6 +334,75 @@ This Quick-Win Templates Library **complements** other Pertama Partners guides:
 
 ---
 
+## Common Problems and How to Fix Them
+
+### "I don't know which template to start with"
+
+**Symptom**: 40 templates feel overwhelming. Analysis paralysis — you read the index but don't pick one.
+
+**Fix**:
+1. Ask: "What's my single biggest pain point this week?" Not this quarter — this week.
+2. Use the role-based navigation above — find your role, pick the first template that matches your current problem
+3. Start with a calculator (15 min) rather than a checklist (30 days) — faster dopamine hit, builds momentum
+
+**Rule of thumb**: If you've spent more than 10 minutes choosing, pick the Burn Rate Calculator (if finance) or OKR Framework (if strategy). Both are universally useful.
+
+---
+
+### "The template doesn't quite fit my business"
+
+**Symptom**: Template assumes SaaS or B2B, but you're e-commerce, services, or a different model. Categories don't match.
+
+**Fix**:
+1. Use 70-80% as-is, customize the rest. Templates are starting points, not rigid forms.
+2. Rename categories to match your business — "MRR" becomes "Monthly Revenue", "Churn" becomes "Customer Retention"
+3. Delete sections that don't apply rather than forcing irrelevant content
+4. If your industry is very different (e.g., F&B, construction), the financial calculators and hiring templates still apply — skip the SaaS-specific comparison guides
+
+**Prevention**: Read the "Best For" description before downloading. If it says "SaaS/B2B" and you're B2C retail, the template may need significant adaptation.
+
+---
+
+### "I filled out the template but nothing changed"
+
+**Symptom**: Beautiful OKR framework sitting in Google Docs. Burn rate calculated perfectly. But business outcomes didn't improve.
+
+**Fix**:
+1. Templates are decisions, not deliverables. An OKR framework must lead to weekly tracking and accountability.
+2. Schedule the next action: If you filled out a checklist, block time tomorrow to start Week 1 tasks
+3. Share with your team — templates completed in isolation don't drive organizational change
+4. Set a 30-day calendar reminder to review results
+
+**Prevention**: When you complete a template, immediately answer: "What's the ONE thing I need to do this week because of this?" Write it down.
+
+---
+
+### "The comparison guide recommends a tool, but my team prefers something else"
+
+**Symptom**: Guide says "Zoho CRM" but your sales team has used Pipedrive for years and loves it. Or team prefers the more expensive option.
+
+**Fix**:
+1. Our comparisons optimize for cost + SEA fit. Your team's preference is valid — switching costs and learning curves matter.
+2. If the team's preferred tool costs 20% more but has 90% adoption, it's probably worth it. Tools people use > tools that are cheaper.
+3. Use the comparison to negotiate — show your current vendor the competing option's pricing and ask for a match
+
+**Prevention**: Involve your team in the evaluation process. Comparisons inform decisions — they don't make them.
+
+---
+
+### "Spreadsheet calculators show numbers I don't trust"
+
+**Symptom**: Unit economics calculator says your CAC:LTV ratio is 1:8, but that doesn't feel right. Or burn rate shows 18 months runway but it feels tighter.
+
+**Fix**:
+1. Check your inputs — the most common errors are: mixing monthly/annual numbers, forgetting to include contractor costs in burn rate, or using gross revenue instead of net
+2. Cross-check one key output against your accounting software. If burn rate calculator says $80K/month and your bank account drops $90K/month, find the $10K gap
+3. Use "worst case" inputs for planning (higher churn, lower conversion) — optimistic models are dangerous
+
+**Prevention**: Label all inputs with time period (monthly vs. annual vs. quarterly) and use conservative estimates by default.
+
+---
+
 ## Questions or Need Help?
 
 **This guide repo**: Open a [GitHub issue](https://github.com/michaelhauge/pertama-partners-resources/issues) with label "quick-win-templates"

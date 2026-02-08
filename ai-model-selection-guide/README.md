@@ -11,7 +11,7 @@ A practical guide for founders and business leaders to navigate the AI provider 
 
 You want to adopt AI for your business, but the landscape is overwhelming:
 
-- 🤯 **Too many options**: OpenAI (GPT-4, o1), Anthropic (Claude), Google (Gemini), DeepSeek, Mistral, Perplexity...
+- 🤯 **Too many options**: OpenAI (GPT-4o, o-series), Anthropic (Claude), Google (Gemini), DeepSeek, Mistral, Perplexity...
 - 💸 **Pricing confusion**: $0/month to $60/user/month, plus per-token API pricing that varies 100x between models
 - 📊 **Capability overlap**: All providers claim to be "best" - but which is actually best for YOUR use case?
 - 🔄 **Constant changes**: New models released monthly, pricing changes quarterly, features update weekly
@@ -305,7 +305,7 @@ Reusable worksheets:
 **A**: Pricing typically changes 1-4 times per year. Features and models update monthly. We track all changes in [CHANGELOG.md](CHANGELOG.md) and update provider files monthly.
 
 ### Q: Are these providers available in Southeast Asia?
-**A**: Yes. OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), and most major providers work in Singapore, Malaysia, Indonesia, and Thailand. Payment methods and data residency vary - see individual provider files for SEA-specific details.
+**A**: Yes, with some caveats. Anthropic (Claude), Google (Gemini), and most major providers work across Singapore, Malaysia, Indonesia, Thailand, Vietnam, and Philippines. OpenAI (ChatGPT) has expanded to most SEA markets but availability and payment methods can vary by country — check OpenAI's supported countries page for the latest. See individual provider files for SEA-specific details including accepted payment methods and data residency.
 
 ### Q: What if I choose wrong and want to switch?
 **A**: Consumer subscriptions are month-to-month (no long-term contracts). You can cancel anytime. Your conversation history is exportable from most providers. Switching providers is low-risk and takes <1 hour. See [guides/04-model-migration.md](guides/04-model-migration.md) (future).

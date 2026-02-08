@@ -73,18 +73,18 @@
 
 ---
 
-## The ROI Promise
+## What You Can Expect
 
 **Time to implement**: 6-12 months (ongoing execution)
 
-**Expected outcomes**:
-- **Time compression**: Reach $10M ARR in 18-36 months (not 3-5 years) — **2-3 years saved**
-- **Capital efficiency**: Burn $3M-$10M to reach $10M ARR (not $10M-$20M) — **$5M-$10M saved**
-- **Team quality**: Hire 80% A-players (not 40-60% A-players) — **$500K-$2M saved on hiring mistakes**
-- **Operational leverage**: Maintain 60-70% gross margins (not 40-50%) — **$1M-$3M annual profit improvement**
-- **Fundraising success**: Raise at 15-25x ARR (not 5-10x ARR) — **$5M-$15M valuation uplift**
+**Potential outcomes** (based on patterns observed across SEA startups at this stage):
+- **Time compression**: Reach $10M ARR in 18-36 months instead of 3-5 years — by avoiding common scaling mistakes
+- **Capital efficiency**: Burn $3M-$10M to reach $10M ARR instead of $10M-$20M — through better ops and hiring
+- **Team quality**: Higher ratio of A-players through structured hiring processes — reducing costly mis-hires
+- **Operational leverage**: Maintain 60-70% gross margins by automating before hiring
+- **Fundraising positioning**: Strong metrics and operations command higher multiples from SEA VCs
 
-**Failure rate reduction**: 70% of $1M ARR startups fail before $10M. This guide reduces failure rate to 30-40% (2x better odds).
+> **Important caveat**: No guide can guarantee outcomes. These figures represent what's *possible* for well-executed startups in favorable market conditions. The 70% failure rate at this stage is real — and while structured approaches improve your odds, execution, market timing, and luck all play significant roles. This guide gives you the frameworks to maximize the factors within your control.
 
 ---
 
@@ -295,11 +295,17 @@
 - **Month 7-9**: Raised $5M Series A (15x ARR valuation) → hired 15 people
 - **Month 10-24**: Scaled to $8M ARR → expanded to Malaysia (30 employees total)
 
+**What went wrong**:
+- First VP Eng hire didn't work out — left after 3 months (cultural misfit, cost $80K in recruiting + severance + lost time). Second hire stuck.
+- Automation sprint broke 2 customer-facing workflows. Took a week to fix, caused churn of 3 accounts ($45K ARR lost).
+- Hiring 15 people in 3 months overwhelmed onboarding — 4 new hires were unproductive for 2+ months, and 2 churned within 6 months.
+
 **Results**:
 - **ARR growth**: $1.5M → $8M (5.3x growth in 24 months)
 - **Team efficiency**: 60 hours/week saved (20% capacity reclaimed)
 - **Capital raised**: $5M at 15x ARR (vs typical 10x in SEA)
 - **Regional footprint**: SG + MY (doubled addressable market)
+- **Hidden costs**: ~$180K in mis-hires and automation mistakes (part of the messy reality)
 
 ---
 
@@ -316,11 +322,17 @@
 - **Month 10-12**: Implemented customer success ops (reduced churn 8% → 3%)
 - **Month 13-18**: Expanded to Singapore + Thailand (3 countries total)
 
+**What went wrong**:
+- Tech rebuild took 6 months, not the planned 4. During rebuild, almost zero new features shipped — two large customers threatened to leave.
+- VP Sales came from US SaaS background and initially applied US-style aggressive tactics. Malaysian enterprise buyers reacted poorly — first 2 months of new sales team produced zero closed deals until approach was adapted.
+- Thailand expansion was premature — opened Bangkok office at Month 13 but product wasn't localized. First 6 months in TH generated only $50K ARR (10% of projection).
+
 **Results**:
 - **ARR growth**: $3M → $12M (4x growth in 18 months)
 - **Churn reduction**: 8%/month → 3%/month (saved $500K ARR)
 - **Shipping velocity**: Recovered 70% (features shipped 2x faster after rebuild)
 - **Regional footprint**: MY + SG + TH (3 countries, 60 employees)
+- **Honest caveat**: TH was underperforming at Month 18 — real traction came 6 months later after localization
 
 ---
 
@@ -337,11 +349,17 @@
 - **Month 13-18**: Raised $20M Series B (18x ARR valuation) → hired C-suite (CFO, CRO, CTO)
 - **Month 19-24**: Scaled to $15M ARR (3 countries, 100 employees)
 
+**What went wrong**:
+- Singapore pricing was set at same level as Indonesia — SG customers actually expected higher prices (perceived as "cheap = low quality"). Had to raise prices 40% in SG and reposition as enterprise.
+- First SG country manager was Jakarta-based trying to manage remotely. Failed within 4 months. Had to hire local SG-based leader at 2.5x the salary.
+- Series B fundraising took 7 months (planned for 4) — market conditions shifted mid-process and two term sheets fell through before closing.
+
 **Results**:
 - **ARR growth**: $5M → $15M (3x growth in 24 months)
 - **Regional footprint**: ID + SG + MY (3 countries)
 - **Capital raised**: $20M at 18x ARR (premium valuation for regional scale)
 - **Team**: Scaled from 60 → 100 employees (executive team in place)
+- **Reality check**: The 24-month timeline was the happy narrative — the fundraising delay nearly caused a cash crisis at Month 15
 
 ---
 
@@ -374,6 +392,106 @@
 **License**: Free for business use. Attribution appreciated.
 
 **Questions?** Contact: [Your Email/Website]
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "We hired a VP but they're not delivering"
+
+**Symptom**: Senior hire (VP Eng, VP Sales, COO) has been in role 3-4 months with no visible impact. Team is skeptical.
+
+**Likely cause**: Either wrong profile (e.g., big-company exec in startup environment), unclear mandate, or insufficient context about SEA market dynamics.
+
+**Fix**:
+1. Have an honest 1:1 — define 3 specific deliverables for next 90 days with measurable outcomes
+2. Assess fit honestly: Can they operate with startup ambiguity? Do they build or just manage?
+3. If it's a market knowledge gap (common with US/EU hires), pair them with a local senior team member
+
+**Prevention**: For $1M-$10M ARR, hire "player-coaches" who can both do the work AND manage the team. Pure managers fail at this stage.
+
+---
+
+### "Operations feel more broken at $3M than they did at $1M"
+
+**Symptom**: Processes that worked for 15 customers break at 80. Team is firefighting daily. Everyone is busy but nothing improves.
+
+**Likely cause**: You hit the "ops gap" — manual processes that were fine at small scale can't handle 5x volume. This is expected and solvable.
+
+**Fix**:
+1. Do the operations audit (Guide 01) — map every process, find the top 3 bottlenecks consuming the most hours
+2. Automate the most repetitive bottleneck first (usually onboarding, reporting, or support routing)
+3. Hire an ops person (or promote one) to own process improvement — this can't be a CEO side project
+
+**Prevention**: Start automating at $1.5M ARR, not $3M. By $3M the problem is urgent; at $1.5M you can build systems deliberately.
+
+---
+
+### "Fundraising is taking forever and investors keep saying no"
+
+**Symptom**: 3+ months into fundraising with no term sheet. Burned through 40+ investor meetings. Running out of runway.
+
+**Likely cause**: Timing, metrics, or narrative. Common issues: raising too early (not enough traction), raising too much (unrealistic valuation), or telling the wrong story (product story instead of market story).
+
+**Fix**:
+1. Audit your metrics honestly: Is your NRR above 100%? Is CAC payback under 18 months? If not, investors see risk.
+2. Reduce your ask — sometimes raising $3M instead of $8M gets you a term sheet faster and at better terms
+3. Shift your investor targeting — SG-based VCs understand SEA metrics better than US VCs expecting US-market growth rates
+4. Consider bridge financing from existing angels while you strengthen metrics
+
+**Prevention**: Start investor conversations 6 months before you need money. Don't wait until runway is under 6 months — desperation shows.
+
+---
+
+### "We expanded to a new country and it's burning cash with no traction"
+
+**Symptom**: New market office has been open 4-6 months. Revenue is 10-20% of projection. Team is demotivated.
+
+**Likely cause**: Premature expansion (product not localized), wrong go-to-market (direct sales when partnerships work better), or wrong market selection.
+
+**Fix**:
+1. Set a 6-month kill switch — if new market hasn't reached 30% of projection by Month 6, cut to skeleton crew
+2. Check product-market fit in the new market specifically — what worked in SG may not work in ID or VN
+3. Consider partnerships over direct sales for initial traction (local partners understand the market better than you do)
+
+**Prevention**: Use the Market Selection Framework (Guide 05) before committing. Nail one market before expanding.
+
+---
+
+### "My co-founder and I disagree on everything now"
+
+**Symptom**: Strategic decisions stall because founders can't align. Board meetings become debates. Team notices the tension.
+
+**Likely cause**: At $1M you could make decisions by feel. At $5M the stakes are higher and decisions need structure. Founder roles that were blurry now need to be distinct.
+
+**Fix**:
+1. Define clear ownership domains — one founder owns product + tech, other owns commercial + ops. No overlap.
+2. Establish decision rights — who has final say on what? Write it down.
+3. If disagreements are fundamental (vision, not tactics), get a trusted board member or advisor to mediate early
+
+**Prevention**: Have the "who decides what" conversation at $2M ARR, before it becomes a crisis.
+
+---
+
+## Limitations & What This Guide Can't Do
+
+**Scaling is hard, and no guide can eliminate the risks.** We want to be upfront about what this guide does and doesn't cover:
+
+**What we cover well**:
+- Operational frameworks that work for most SaaS companies at $1M-$10M ARR
+- SEA-specific hiring, expansion, and fundraising tactics
+- Concrete templates, metrics, and automation playbooks
+
+**What we don't cover**:
+- **Product-market fit** — This guide assumes you have it. If customers aren't retaining, no amount of ops optimization will save you.
+- **Deep technical architecture** — We cover tech stack decisions at a strategic level, but not implementation details (use your CTO or fractional CTO for that).
+- **Industry-specific regulations** — Fintech, healthtech, and edtech in SEA each have unique regulatory requirements that need specialized legal counsel.
+
+**Honest caveats**:
+- The case studies are composites based on real companies, but simplified. Real scaling is messier.
+- Frameworks that work in Singapore may need significant adaptation for Indonesia, Vietnam, or Philippines markets.
+- Fundraising multiples change rapidly — the ranges here reflect early 2026 conditions and may not hold.
+- Not every founder *should* scale to $10M ARR. Some businesses are better as profitable $2-5M companies.
 
 ---
 

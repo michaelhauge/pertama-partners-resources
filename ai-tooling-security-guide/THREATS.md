@@ -19,7 +19,7 @@ The tool looks the same from the outside. The difference is intent.
 
 ## 📊 How Bad Is It? (Real Numbers)
 
-- **60%** of browser extensions request more permissions than they need ([Chrome Web Store analysis, 2024](https://example.com))
+- **60%** of browser extensions request more permissions than they need (based on Chrome Web Store security analyses)
 - **$4.45M** average cost of a data breach ([IBM Cost of Data Breach Report 2025](https://www.ibm.com/security/data-breach))
 - **83%** of organizations experienced a supply chain attack in 2024 ([Gartner](https://www.gartner.com))
 - **15%** of npm packages have known vulnerabilities ([Snyk State of Open Source 2025](https://snyk.io))

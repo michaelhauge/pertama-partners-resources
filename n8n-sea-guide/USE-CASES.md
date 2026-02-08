@@ -629,11 +629,11 @@ Management needs weekly reports combining data from Google Analytics, HubSpot CR
 | 10. Report Generation | 12.5 hours | $625 |
 | **TOTAL (if implementing all)** | **165.4 hours/month** | **$8,270/month** |
 
-**Average implementation**: 5-7 workflows = **71 hours/month saved** = **$3,550/month value**
+**Average implementation**: 5-7 workflows = **71 hours/month saved** = **$3,550/month value** (at full maturity — see note below)
 
 **n8n Cost (self-hosted)**: ~$5.50/month
 
-**ROI**: ($3,550 - $5.50) / $5.50 = **64,391%**
+> **Reality check**: These time savings represent the theoretical maximum once all workflows are running smoothly. In practice, expect 50-70% of these savings in months 1-3 as you build, test, and refine workflows. Budget 2-4 hours/month for workflow maintenance. The cost savings vs alternatives (Zapier, Make) are real and substantial — but the time-value numbers assume perfect automation, which takes time to achieve.
 
 ---
 
@@ -681,11 +681,11 @@ Implement complex workflows:
 
 ### Total 3-Month Implementation
 
-**Time invested**: 16.25 hours
-**Monthly value after 3 months**: $8,270
-**Annual value**: $99,240
+**Time invested**: 16.25 hours (setup only — budget additional 2-4 hours/month for maintenance)
+**Monthly value after 3 months**: Up to $8,270 (at full maturity with all 10 workflows running)
+**Realistic monthly value**: $4,000-6,000 (accounting for maintenance, imperfect automation, and workflows that need iteration)
 
-**ROI on time invested**: $99,240 / (16.25 hours × $50) = **12,222%**
+**The bottom line**: 16 hours of setup work can save you 40-100+ hours per month once workflows mature. Even conservative estimates show this is one of the highest-leverage investments a small business can make.
 
 ---
 

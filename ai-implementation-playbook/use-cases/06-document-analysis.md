@@ -648,6 +648,21 @@ Format as CSV for easy filtering and searching.
 
 ---
 
+## Common Mistakes
+
+Avoid these pitfalls when using AI for document analysis:
+
+| Mistake | What Happens | How to Avoid |
+|---------|-------------|--------------|
+| **Trusting AI for legal analysis without lawyer review** | AI misses jurisdiction-specific clauses, non-standard terms, or subtle liability language — one missed clause can cost millions | Use AI to flag and summarize, but always have a qualified lawyer review any contract before signing |
+| **Uploading confidential documents to consumer AI tools** | Sensitive contracts, financial data, or M&A documents sent to ChatGPT/Claude consumer plans may be used for training | Use enterprise plans with data retention agreements, or redact confidential details before uploading |
+| **Assuming AI reads every page equally well** | AI can miss content in tables, headers/footers, scanned PDFs, or appendices — especially in poorly formatted documents | Ask AI explicitly: "Did you review all appendices and schedules?" and spot-check key sections manually |
+| **Not verifying extracted numbers** | AI sometimes transposes digits, misreads currency symbols, or calculates totals incorrectly | Always cross-reference extracted financial data against the source document |
+| **Using AI as a replacement for domain expertise** | AI can extract and summarize, but it doesn't understand your business context (e.g., whether a 90-day payment term is normal for your industry) | Use AI to surface information faster, but apply your domain judgment to interpret it |
+| **Analyzing one document at a time when you should batch** | Processing 20 invoices individually takes 20 prompts when a batch approach works better | Create a structured template: upload multiple docs and ask AI to extract the same fields from each into a table |
+
+---
+
 ## Related Resources
 
 - **[PROMPT-LIBRARY.md](../PROMPT-LIBRARY.md)** - Copy-paste document analysis prompts

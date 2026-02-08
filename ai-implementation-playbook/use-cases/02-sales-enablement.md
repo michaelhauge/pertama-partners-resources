@@ -675,6 +675,48 @@ give feedback on:
 
 ---
 
+## Connecting to Your Workflow
+
+The real power of AI for sales comes when it connects to your CRM and outreach tools.
+
+### Basic Setup (Copy-Paste)
+1. Research prospect on LinkedIn/company website
+2. Paste prospect info into ChatGPT/Claude with your email prompt
+3. Copy AI draft into your email client or CRM
+4. Personalize and send
+
+**Time**: ~5 min per prospect (vs 15-20 min fully manual)
+
+### Intermediate Setup (CRM Integration)
+1. Store your best prompts as templates in your CRM (HubSpot, Salesforce, Pipedrive)
+2. Use CRM data (company size, industry, last interaction) as prompt inputs
+3. Generate personalized emails without leaving your CRM
+
+**Example workflow**:
+```
+In HubSpot: Open contact → View company details →
+Copy key details into Claude → Generate personalized email →
+Paste back into HubSpot email composer → Send
+```
+
+### Advanced Setup (Semi-Automated Pipeline)
+Connect your CRM to AI for automatic prospect research and email drafting:
+
+```
+Trigger: New lead enters CRM (from form, import, or manual entry)
+→ Step 1: AI researches company (website, news, LinkedIn)
+→ Step 2: AI generates personalized outreach email
+→ Step 3: Draft saved in CRM as pending email for rep review
+→ Rep reviews, personalizes greeting/close, and sends
+```
+
+**Tools**: n8n or Zapier + OpenAI/Anthropic API + your CRM's API
+**Volume sweet spot**: 20-50 prospects/week. Below 20, manual is fine. Above 50, you need dedicated outreach tools (Apollo, Outreach).
+
+> **Warning**: Never fully automate outreach without human review. Prospects can tell when emails are AI-generated and unreviewd — and in relationship-driven SEA markets, a generic AI email is worse than no email.
+
+---
+
 ## Related Resources
 
 - **[PROMPT-LIBRARY.md](../PROMPT-LIBRARY.md)** - Copy-paste sales prompts

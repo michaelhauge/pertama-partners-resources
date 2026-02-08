@@ -81,9 +81,9 @@ AI-first CS = AI handles data analysis and content generation (35 minutes per re
 - Escalation management (executive relationships, save plays)
 - Cultural adaptation (relationship nuances AI can't handle)
 
-**Time savings**: 80-96% reduction in administrative work, freeing CSMs for high-value activities
+**Time savings**: 80-96% reduction in administrative work (data entry, report generation, scheduling), freeing CSMs for high-value conversations
 
-**ROI**: 1 CSM can manage 2-3x more customers with AI assistance
+**Capacity increase**: 1 CSM can manage 2-3x more customers with AI handling routine tasks — though relationship quality should be monitored as you scale
 
 ---
 

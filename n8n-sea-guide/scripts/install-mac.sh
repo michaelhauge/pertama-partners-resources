@@ -66,6 +66,24 @@ while true; do
     fi
 done
 
+# Timezone selection
+echo ""
+echo -e "${BLUE}Select your timezone:${NC}"
+echo "  1) Asia/Singapore (Singapore, Malaysia)"
+echo "  2) Asia/Jakarta (Indonesia - WIB)"
+echo "  3) Asia/Bangkok (Thailand, Vietnam)"
+echo "  4) Asia/Manila (Philippines)"
+echo ""
+read -p "Enter choice [1-4, default 1]: " tz_choice
+case ${tz_choice:-1} in
+    1) TIMEZONE="Asia/Singapore" ;;
+    2) TIMEZONE="Asia/Jakarta" ;;
+    3) TIMEZONE="Asia/Bangkok" ;;
+    4) TIMEZONE="Asia/Manila" ;;
+    *) TIMEZONE="Asia/Singapore" ;;
+esac
+echo -e "${GREEN}✓${NC} Timezone: ${TIMEZONE}"
+
 # PostgreSQL password
 POSTGRES_PASSWORD=$(openssl rand -base64 16)
 
@@ -110,7 +128,7 @@ services:
       - N8N_HOST=localhost
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
-      - GENERIC_TIMEZONE=Asia/Singapore
+      - GENERIC_TIMEZONE=\${TIMEZONE}
     volumes:
       - n8n_data:/home/node/.n8n
     depends_on:
@@ -160,10 +178,10 @@ echo -e "${GREEN}Access n8n at:${NC} http://localhost:5678"
 echo ""
 echo -e "${BLUE}Credentials:${NC}"
 echo "  Username: ${N8N_USER}"
-echo "  Password: ${N8N_PASSWORD}"
+echo "  Password: (the password you entered during setup)"
 echo ""
 echo -e "${YELLOW}Important:${NC}"
-echo "  • Keep this terminal output for your records"
+echo "  • Save your credentials in a password manager (1Password, Bitwarden, etc.)"
 echo "  • n8n runs in the background"
 echo "  • To stop: cd ~/n8n-setup && docker-compose down"
 echo "  • To restart: cd ~/n8n-setup && docker-compose up -d"
