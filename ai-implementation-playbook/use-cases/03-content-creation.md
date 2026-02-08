@@ -713,6 +713,68 @@ Create a brand voice guide I can use to train AI to write in this style.
 
 ---
 
+## Connecting to Your Workflow
+
+AI content creation is most efficient when it's part of your publishing pipeline, not a separate process.
+
+### Basic Setup (AI as Writing Partner)
+1. Create outline in Google Docs
+2. Generate sections in ChatGPT/Claude using your outline
+3. Paste into Google Docs, edit for voice and accuracy
+4. Publish through your CMS (WordPress, Webflow, etc.)
+
+**Time**: 1-2 hours per blog post (vs 4-8 hours fully manual)
+
+### Intermediate Setup (Content System)
+1. Create a "Content Brief" template that feeds into AI:
+   - Target keyword, audience, tone, word count, key points, internal links to include
+2. Store briefs in a project management tool (Notion, Asana)
+3. Use Claude Projects or ChatGPT Custom GPTs with your brand voice pre-loaded
+4. AI generates first draft from brief → Editor polishes → Publish
+
+**Template for consistent output**:
+```
+Content Brief → AI First Draft → Human Edit (voice, facts, examples) →
+SEO Review → Final Edit → Publish → Repurpose (social posts, newsletter)
+```
+
+### Advanced Setup (Content Pipeline Automation)
+```
+Trigger: New content brief created in Notion/Asana
+→ Step 1: AI generates first draft based on brief fields
+→ Step 2: Draft saved as Google Doc, shared with editor
+→ Step 3: After editor approves, AI generates 5 social media posts from the article
+→ Step 4: Social posts queued in Buffer/Hootsuite for the week
+```
+
+**Repurposing multiplier**: One blog post can automatically generate:
+- 5 social media posts (LinkedIn, Twitter/X, Facebook)
+- 1 email newsletter summary
+- 1 video script outline
+- 3 SEO meta descriptions for A/B testing
+
+**Tools**: n8n or Zapier + OpenAI/Anthropic API + your CMS API + social scheduling tool
+
+> **Quality gate**: Always have a human editor between AI draft and publication. The automation saves time on first drafts and repurposing — not on editorial judgment.
+
+---
+
+## Common Mistakes
+
+Avoid these pitfalls when using AI for content creation:
+
+| Mistake | What Happens | How to Avoid |
+|---------|-------------|--------------|
+| **Publishing AI content without fact-checking** | AI hallucinates statistics, company names, and dates — readers lose trust, SEO penalties for misinformation | Verify every factual claim, statistic, and URL before publishing |
+| **Losing your brand voice** | All your content sounds like "helpful corporate AI" — indistinguishable from competitors | Include brand voice guidelines in every prompt. Better: write the intro and conclusion yourself, use AI for the middle. |
+| **Over-relying on AI for SEO** | AI content often lacks the specific, experiential detail that Google rewards (E-E-A-T) | Add personal anecdotes, proprietary data, or expert quotes that AI can't generate |
+| **Skipping the editing pass** | AI-generated text has telltale patterns (filler phrases, repetitive structure, "delve into") that readers recognize | Always do a full human edit. Read aloud — if it sounds robotic, rewrite those sections. |
+| **Generating volume over quality** | 20 mediocre AI blog posts perform worse than 5 well-crafted ones | Use AI to speed up your existing publishing cadence, not to 10x volume |
+| **Not providing enough context** | Vague prompts ("write a blog about AI") produce vague content | Provide: target audience, key points, tone, word count, examples of content you like, and what angle makes this unique |
+| **Ignoring AI's content for training data concerns** | Some AI tools may use your inputs for training — your unpublished strategy content could surface elsewhere | Use enterprise/API plans with data retention policies, or avoid sharing proprietary strategies in prompts |
+
+---
+
 ## Related Resources
 
 - **[PROMPT-LIBRARY.md](../PROMPT-LIBRARY.md)** - Copy-paste content creation prompts

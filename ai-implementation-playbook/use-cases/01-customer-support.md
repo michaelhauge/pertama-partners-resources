@@ -629,6 +629,60 @@ Track these metrics to measure AI impact on support operations:
 
 ---
 
+## Connecting to Your Workflow
+
+AI-drafted responses are most valuable when they flow into your existing tools — not when they're copy-pasted between tabs.
+
+### Basic Setup (No Automation)
+1. Open support ticket in your helpdesk (Zendesk, Freshdesk, Intercom, email)
+2. Copy the customer's message
+3. Paste into ChatGPT/Claude with your prompt template
+4. Copy AI draft back into helpdesk
+5. Edit and send
+
+**Time**: ~5 min per ticket. Good for getting started.
+
+### Intermediate Setup (Template Library)
+1. Save 10-15 prompt templates as "Saved Prompts" in ChatGPT or Claude Projects
+2. Each template pre-loaded with your company policies, tone guide, and FAQ answers
+3. Agent selects the right template, pastes customer message, gets draft in seconds
+
+**Time**: ~3 min per ticket. Reduces prompt engineering time.
+
+### Advanced Setup (Automation with n8n or Zapier)
+Connect your helpdesk directly to AI for near-automatic drafting:
+
+```
+Trigger: New ticket in Zendesk/Freshdesk
+→ Step 1: Classify ticket category (AI call)
+→ Step 2: Generate draft response using category-specific prompt (AI call)
+→ Step 3: Create internal note with AI draft for agent review
+→ Agent reviews, edits, and sends
+```
+
+**Tools**: n8n (free, self-hosted) or Zapier ($20+/month) + OpenAI/Anthropic API ($5-20/month based on volume)
+
+**Time**: ~1 min per ticket (agent only reviews and edits). See [n8n SEA Guide](../../n8n-sea-guide/) for setup instructions.
+
+> **Important**: Even with full automation, never auto-send AI responses without human review. The automation should create a draft for the agent, not send directly to the customer.
+
+---
+
+## Common Mistakes
+
+Avoid these pitfalls when implementing AI for customer support:
+
+| Mistake | What Happens | How to Avoid |
+|---------|-------------|--------------|
+| **Sending AI drafts without review** | Customers receive generic or slightly wrong responses, damaging trust | Always have an agent review and personalize before sending |
+| **Using AI for sensitive/angry tickets** | AI doesn't detect emotional nuance well — can sound dismissive or tone-deaf | Flag escalations, complaints, and refund requests for full human handling |
+| **Pasting customer PII into AI tools** | Data privacy violation — names, emails, account numbers sent to third-party servers | Anonymize tickets before AI processing (replace names with "Customer", redact account numbers) |
+| **Not customizing prompts for your brand voice** | AI defaults to generic corporate tone — every response sounds the same | Include your brand voice guidelines in the system prompt ("We're casual but professional, use first names") |
+| **Expecting AI to learn from corrections** | ChatGPT/Claude don't remember past corrections between sessions | Build a shared prompt template that includes your FAQs, policies, and common edge cases |
+| **Automating before understanding patterns** | AI scales your mistakes, not just your efficiency | Spend week 1 categorizing tickets manually. Automate only the categories where AI consistently produces good drafts. |
+
+---
+
 ## Related Resources
 
 - **[PROMPT-LIBRARY.md](../PROMPT-LIBRARY.md)** - Copy-paste customer support prompts

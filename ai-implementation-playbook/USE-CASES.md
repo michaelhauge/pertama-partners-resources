@@ -6,6 +6,65 @@ This document helps you identify which AI use cases will deliver the most value 
 
 ---
 
+## The "Should I Use AI for This?" Framework
+
+Before diving into our 10 use cases, here's a universal framework for evaluating **any** task in your business. This works for tasks not on our list too.
+
+### The 5-Question AI Fit Test
+
+Score each question 1-5, then add up your total:
+
+| # | Question | Score 1 (Poor fit) | Score 5 (Great fit) |
+|---|----------|-------------------|-------------------|
+| 1 | **Is it repetitive?** | One-off or rare task | Done daily/weekly, same pattern |
+| 2 | **Is it text-based?** | Physical, spatial, or purely visual | Reading, writing, analyzing text/data |
+| 3 | **Does it tolerate imperfection?** | Must be 100% accurate (legal filings, medical dosing) | 80-90% accuracy is useful (drafts, summaries, brainstorms) |
+| 4 | **Is the output verifiable?** | Hard to check if AI is right | A human can quickly review and correct |
+| 5 | **Is it time-consuming relative to value?** | Quick task (5 min, no leverage) | Slow task (30+ min) that blocks other work |
+
+**Scoring**:
+- **20-25**: Excellent AI fit — implement immediately
+- **15-19**: Good AI fit — worth a 2-week pilot
+- **10-14**: Marginal — AI might help but test carefully before committing
+- **5-9**: Poor fit — human-only is probably better
+
+### Decision Flowchart
+
+```
+Is the task mostly text/data-based?
+├── NO → AI probably won't help much. Consider other automation (RPA, scripts, integrations).
+└── YES ↓
+    Does the task happen at least weekly?
+    ├── NO → Not worth the setup time. Do it manually or save for batch processing.
+    └── YES ↓
+        Can a human review AI output in under 5 minutes?
+        ├── NO → Risky. Only proceed if you have domain experts to verify.
+        └── YES ↓
+            Does the task take >30 min currently?
+            ├── NO → Small win. Implement only if it's easy (copy-paste prompt).
+            └── YES ↓
+                ✅ Strong AI candidate. Pick a tool, build a prompt, test on 5 real examples.
+```
+
+### Tasks That Almost Always Work Well With AI
+
+- Drafting emails (any kind — sales, support, internal)
+- Summarizing long documents, meetings, or research
+- Extracting structured data from unstructured text (invoices, resumes, forms)
+- Generating variations (A/B test copy, product descriptions, social posts)
+- Translating or adapting content for different audiences
+- Creating first drafts of reports, proposals, or documentation
+
+### Tasks That Almost Never Work Well With AI
+
+- Making final decisions on important matters (hiring, firing, strategy)
+- Anything requiring real-time, up-to-the-minute data (live dashboards, stock prices)
+- Tasks where errors have severe consequences and aren't easily caught (medical, legal filings)
+- Building genuine human relationships (client rapport, team leadership, sensitive conversations)
+- Novel creative strategy (AI remixes patterns — it doesn't invent new paradigms)
+
+---
+
 ## How to Use This Guide
 
 ### Step 1: Rate Each Use Case
@@ -33,7 +92,9 @@ Choose the 3 highest-scoring use cases to implement first.
 
 ## Use Case Matrix
 
-| Use Case | Time Saved | Implementation | Typical ROI | Best Tool |
+> **How to read this table**: "Time Saved" refers to the drafting/production phase of each task — not total time including review and editing. All AI output requires human review. "Typical ROI" is calculated as (annual time savings × hourly rate) / (annual tool cost). These are representative ranges, not guarantees — your results will depend on task volume, complexity, and team proficiency.
+
+| Use Case | Time Saved* | Implementation | Typical ROI | Best Tool |
 |----------|------------|----------------|-------------|-----------|
 | **Customer Support** | 40-60% | Easy | 30-50x | ChatGPT, Claude |
 | **Sales Enablement** | 30-50% | Easy | 20-40x | ChatGPT, Claude |
@@ -45,6 +106,8 @@ Choose the 3 highest-scoring use cases to implement first.
 | **Training Materials** | 80-95% | Easy | 20-100x | ChatGPT, Claude |
 | **Data Analysis** | 60-80% | Medium | 15-35x | ChatGPT (Advanced Data Analysis) |
 | **Product Descriptions** | 90-98% | Easy | 50-200x | ChatGPT, Claude, Jasper |
+
+*On the drafting/production phase. Human review and editing still required.
 
 ---
 
@@ -64,10 +127,12 @@ Support team spends 15-30 minutes per email crafting responses. High volume = te
 
 ### Expected ROI
 **Before**: 100 emails/week × 20 min/email = 33 hours/week
-**After**: 100 emails/week × 5 min/email = 8 hours/week
-**Savings**: 25 hours/week = $75,000/year (at $60/hour)
+**After**: 100 emails/week × 5 min/email = 8 hours/week (includes review time)
+**Savings**: 25 hours/week = $75,000/year (at $60/hour fully loaded cost — adjust for your market)
 **Tool cost**: $20-60/month
 **ROI**: **30-50x**
+
+> *Assumes team reaches proficiency with prompts (typically 2-3 weeks). First-week savings will be lower as team learns. Complex or sensitive tickets still require full human handling.*
 
 ### Tools
 - ChatGPT Plus ($20/month)
@@ -425,10 +490,12 @@ Writing product descriptions for e-commerce catalog is tedious and slow. Catalog
 
 ### Expected ROI
 **Before**: 50 products/month × 20 min/product = 16.7 hours/month
-**After**: 50 products/month × 30 sec/product = 0.4 hours/month
-**Savings**: 16.3 hours/month = $11,736/year
+**After**: 50 products/month × 30 sec generation + 2 min review/edit = 2.1 hours/month
+**Savings**: 14.6 hours/month = $10,512/year (at $60/hour)
 **Tool cost**: $20-50/month
-**ROI**: **200x+**
+**ROI**: **50-200x** (highest for standardized products; lower for unique or luxury items needing brand voice)
+
+> *ROI scales with catalog size. For <20 products, manual writing may be faster than setting up templates. Quality improves dramatically with a good product spec template — garbage in, garbage out.*
 
 ### Tools
 - ChatGPT Plus ($20/month)
@@ -510,5 +577,19 @@ Use this table to choose your first 3 use cases:
 - **[PROMPT-LIBRARY.md](./PROMPT-LIBRARY.md)** - 50+ proven prompt templates
 - **[SECURITY.md](./SECURITY.md)** - Data privacy and compliance guidance
 - **[ADOPTION.md](./ADOPTION.md)** - Team training and change management
+
+---
+
+## A Note on Our ROI Methodology
+
+All ROI figures in this guide are calculated as: **(annual time savings × hourly labor rate) / annual tool cost**.
+
+**Key assumptions:**
+- **Hourly rate**: $60/hour (US fully loaded cost). For Southeast Asia, typical rates are $15-40/hour — divide annual savings accordingly.
+- **Time savings**: Based on the drafting/production phase. All use cases assume human review of AI output (typically 20-30% of the original task time).
+- **Learning curve**: ROI figures reflect proficient usage (typically reached after 2-4 weeks). First-week results will be 30-50% lower.
+- **Task suitability**: These use cases were selected because they're well-suited to AI. Not all tasks in your business will see similar returns.
+
+**We encourage you to track your own numbers** using the [ROI calculator](./templates/roi-calculator.csv) rather than relying on our estimates. Your actual results are the only ones that matter.
 
 **Ready to dive deeper?** → Choose a use case guide in [use-cases/](./use-cases/)

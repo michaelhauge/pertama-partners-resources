@@ -288,19 +288,18 @@
 
 **Value Calculation**:
 - Hourly rate: $50 (average for SEA business manager)
-- Annual value saved: 832 hours × $50 = **$41,600**
+- Annual value saved: 832 hours × $50 = **$41,600** (theoretical maximum — see note below)
 
 **n8n Cost (Self-Hosted)**:
 - Annual cost: $66 (Contabo VPS)
-- **ROI**: ($41,600 - $66) / $66 = **62,921%**
-- **Payback period**: 0.6 days
+- **Direct savings vs Zapier**: $834/year
+- **Payback period**: Under 1 month
 
 **Zapier Cost (Professional)**:
 - Annual cost: $900
-- **ROI**: ($41,600 - $900) / $900 = **4,422%**
-- **Payback period**: 8 days
+- **Payback period**: Under 1 month
 
-**Savings vs Zapier**: $834/year
+> **A note on ROI math**: We deliberately don't show the astronomical ROI percentages you might calculate from these numbers (dividing $41,600 by $66 gives a misleading figure). The real question is: **will n8n save you meaningful time and money?** Yes — typically $500-2,500/year in tool costs vs Zapier, plus 10-20 hours/week once workflows are mature. The time-value numbers above assume all workflows run perfectly after setup. In practice, expect to spend 2-4 hours/month maintaining workflows, and budget for a learning curve of 1-2 months before reaching full productivity.
 
 ---
 
@@ -570,7 +569,7 @@ Oracle Cloud's Always Free tier is also free forever (as long as you use it).
 
 **Typical Savings**: $300-2,500/year depending on usage
 
-**ROI**: 4,000-60,000% when factoring in time saved
+**Value**: Significant time savings (10-20 hours/week) plus lower tool costs vs Zapier/Make
 
 ---
 

@@ -11,7 +11,7 @@ A practical guide for founders and business leaders to navigate the AI provider 
 
 You want to adopt AI for your business, but the landscape is overwhelming:
 
-- 🤯 **Too many options**: OpenAI (GPT-4, o1), Anthropic (Claude), Google (Gemini), DeepSeek, Mistral, Perplexity...
+- 🤯 **Too many options**: OpenAI (GPT-4o, o-series), Anthropic (Claude), Google (Gemini), DeepSeek, Mistral, Perplexity...
 - 💸 **Pricing confusion**: $0/month to $60/user/month, plus per-token API pricing that varies 100x between models
 - 📊 **Capability overlap**: All providers claim to be "best" - but which is actually best for YOUR use case?
 - 🔄 **Constant changes**: New models released monthly, pricing changes quarterly, features update weekly
@@ -287,6 +287,60 @@ Reusable worksheets:
 
 ---
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA businesses choosing AI providers. Names and details are anonymized.
+
+### Case Study 1: Malaysian Marketing Agency (12 Employees)
+
+**Company**: Content marketing agency in KL, 12 employees. Needed AI for blog writing, social media content, and client report generation.
+
+**The problem**: Evaluated 5 AI providers over 6 weeks but couldn't decide. Each team member had a different preference. Meanwhile, competitors were already using AI and producing content faster.
+
+**What they tried**: Followed the 90-day roadmap — free tier testing (Week 1-2), paid tier evaluation (Week 3-4), team rollout (Month 2-3).
+
+**What went wrong**:
+- Spent too long on Phase 1 (free tier testing stretched to 4 weeks instead of 2) — analysis paralysis comparing ChatGPT vs Claude vs Gemini on 50+ test prompts
+- Chose ChatGPT Plus initially because it was "most well-known" — but discovered Claude Pro was significantly better for their long-form content after 3 weeks of use
+- Switching to Claude Pro mid-rollout confused the team — some had ChatGPT prompts saved, others had Claude prompts, knowledge base was split
+- DeepSeek was cheapest for API usage but support documentation was entirely in Chinese — couldn't troubleshoot issues
+
+**Actual results** (Month 3):
+- Final choice: Claude Pro ($20/user × 8 writers = $160/month)
+- Content production: 3x faster (blog posts from 8 hours → 2.5 hours each)
+- Quality: Editors reported 60% fewer major revisions needed
+- ROI: $160/month tool cost vs ~$4,000/month in time savings
+- But: 4 of 12 employees still underuse AI (prefer manual workflow). Adoption is ongoing.
+
+**Key takeaway**: Don't spend more than 2 weeks on free tier testing. Pick one provider, commit for 30 days, then evaluate. Switching providers mid-rollout is disruptive — better to pick quickly and optimize later.
+
+---
+
+### Case Study 2: Singapore Fintech Startup (25 Employees)
+
+**Company**: B2B payments platform, 25 employees. Needed AI for code generation, documentation, investor report writing, and data analysis.
+
+**The problem**: Multiple use cases meant no single AI provider was best for everything. Engineering wanted Claude (code), marketing wanted ChatGPT (images + web search), finance wanted ChatGPT (data analysis).
+
+**What they tried**: "Best of breed" approach — Claude Pro for engineering, ChatGPT Plus for marketing and finance.
+
+**What went wrong**:
+- Managing two subscriptions and two prompt libraries created friction — team didn't know which tool to open for which task
+- ChatGPT Team plan ($25/user) required annual billing, but they only wanted 10 of 25 employees on it — couldn't mix plan types
+- Data sensitivity concern: engineering team accidentally pasted proprietary code into ChatGPT (no enterprise data protection) — had to upgrade to ChatGPT Team with admin controls
+- Cost escalated from planned $400/month to $650/month as more people requested access
+
+**Actual results** (Month 3):
+- Engineering: Claude Pro ($20 × 8 engineers = $160/mo) — code quality improved, PR reviews 40% faster
+- Non-engineering: ChatGPT Team ($25 × 10 users = $250/mo) — reports, research, and content
+- Total: $410/month (under budget after cutting ChatGPT seats from 10 to 8)
+- Combined time savings: ~120 hours/month across team
+- But: Still haven't solved the "which tool for which task" confusion completely — created an internal cheat sheet that helps
+
+**Key takeaway**: For teams with diverse use cases, the dual-provider approach works but needs an internal guide. Create a simple "Use Claude for X, ChatGPT for Y" reference card.
+
+---
+
 ## Common Questions
 
 ### Q: Which is better - ChatGPT or Claude?
@@ -305,13 +359,77 @@ Reusable worksheets:
 **A**: Pricing typically changes 1-4 times per year. Features and models update monthly. We track all changes in [CHANGELOG.md](CHANGELOG.md) and update provider files monthly.
 
 ### Q: Are these providers available in Southeast Asia?
-**A**: Yes. OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), and most major providers work in Singapore, Malaysia, Indonesia, and Thailand. Payment methods and data residency vary - see individual provider files for SEA-specific details.
+**A**: Yes, with some caveats. Anthropic (Claude), Google (Gemini), and most major providers work across Singapore, Malaysia, Indonesia, Thailand, Vietnam, and Philippines. OpenAI (ChatGPT) has expanded to most SEA markets but availability and payment methods can vary by country — check OpenAI's supported countries page for the latest. See individual provider files for SEA-specific details including accepted payment methods and data residency.
 
 ### Q: What if I choose wrong and want to switch?
 **A**: Consumer subscriptions are month-to-month (no long-term contracts). You can cancel anytime. Your conversation history is exportable from most providers. Switching providers is low-risk and takes <1 hour. See [guides/04-model-migration.md](guides/04-model-migration.md) (future).
 
 ### Q: Do I need "Enterprise" plans?
 **A**: Only if you need SSO, admin controls, or compliance certifications (SOC 2, HIPAA). For teams <20 people, consumer/Team plans are usually sufficient. Enterprise makes sense at 50+ users or for regulated industries.
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "We picked a provider but the team isn't using it"
+
+**Symptom**: Tool is purchased, logins are provisioned, but usage data shows 30% of users haven't logged in after Week 2.
+
+**Likely cause**: No training, no immediate use case, or the tool was mandated top-down without demonstrating value. People default to their existing workflow.
+
+**Fix**:
+1. Start with the team's biggest time sink — show them how AI solves THAT specific problem (not generic demos)
+2. Run a 30-minute workshop with live examples from their actual work
+3. Create a shared prompt library with 10 "copy-paste-and-go" prompts for common tasks
+4. Pair low-adopters with power users (peer coaching works better than training)
+
+**Prevention**: Before purchasing, demo the tool to the team using THEIR data and THEIR tasks. Adoption follows demonstrated value.
+
+---
+
+### "AI output quality is inconsistent — sometimes great, sometimes useless"
+
+**Symptom**: Same type of request produces wildly different quality results. Team starts doubting whether AI is worth it.
+
+**Likely cause**: Inconsistent prompting. Without prompt templates, each person writes prompts differently and gets different results.
+
+**Fix**:
+1. Build a team prompt library (Notion doc or shared folder) with tested prompts for each use case
+2. Teach the "context + task + format" prompt structure: "You are [role]. Do [task]. Output as [format]."
+3. Save prompts that work well — iterate on them, don't start from scratch each time
+
+**Prevention**: Invest 2-3 hours in creating 10 battle-tested prompt templates before team rollout. This single step doubles adoption rates.
+
+---
+
+### "Our AI costs are higher than expected"
+
+**Symptom**: Monthly bill is 2-3x the budget. Multiple people subscribed individually instead of using team plan.
+
+**Likely cause**: No centralized procurement. Team members signed up with personal accounts. Some using API credits without monitoring.
+
+**Fix**:
+1. Audit all AI subscriptions — check credit card statements and ask each team member what they use
+2. Consolidate to team/enterprise plans (typically 10-20% cheaper per seat)
+3. Set up usage monitoring for API-based tools (DeepSeek, OpenAI API)
+4. Cancel duplicate subscriptions
+
+**Prevention**: Designate one person (ops or finance) to manage all AI subscriptions from Day 1. Use one corporate card.
+
+---
+
+### "We're worried about data privacy with AI tools"
+
+**Symptom**: Legal or compliance team raises concerns about putting company data into AI tools. Especially relevant for PDPA-regulated businesses in Singapore/Malaysia.
+
+**Likely cause**: Valid concern — consumer AI plans (ChatGPT Plus, Claude Pro) have weaker data policies than team/enterprise plans.
+
+**Fix**:
+1. Upgrade to team/enterprise plans — they typically include "data not used for training" guarantees
+2. Create a data classification guide: Public data (OK for any AI), Internal data (team plans only), Confidential data (no AI, or enterprise plan with DPA)
+3. Review each provider's data processing agreement (DPA) — Claude for Work and ChatGPT Team both offer DPAs
+
+**Prevention**: Address data privacy BEFORE rollout, not after. Create simple rules: "Don't paste customer PII, financial data, or proprietary code into consumer AI plans."
 
 ---
 

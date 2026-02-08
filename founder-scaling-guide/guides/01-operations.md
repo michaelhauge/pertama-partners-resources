@@ -124,23 +124,25 @@ Example:
 
 ### Step 4: Prioritize Bottlenecks by ROI
 
-**ROI Formula**:
+**ROI Formula** (for prioritization — not financial projections):
 ```
-ROI = (Hours saved per week × $100/hr) ÷ Automation cost
+Priority Score = (Hours saved per week × $100/hr) ÷ Automation cost
 
 Where:
 - Hours saved = Current manual hours/week
 - $100/hr = Loaded cost per employee hour (salary + overhead ÷ 2,000 hours/year)
-- Automation cost = One-time cost to automate (tool subscription + setup time)
+  → Adjust for your market: SEA rates typically $30-60/hr loaded
+- Automation cost = Setup cost + first-year maintenance
 ```
+
+> **Note**: This formula is for *ranking which bottlenecks to fix first*, not for calculating financial returns to show investors. Real-world savings are typically 50-70% of theoretical savings, because: (1) automations need ongoing maintenance, (2) some edge cases still need manual handling, and (3) the learning curve for new tools takes 2-4 weeks.
 
 **Example**:
 - **Process**: Weekly sales report (6 hrs/week manual)
-- **Automation**: Metabase dashboard ($0/month for self-hosted, 20 hrs setup)
-- **Hours saved**: 6 hrs/week × 52 weeks = 312 hrs/year
-- **Value saved**: 312 hrs × $100/hr = $31,200/year
-- **Automation cost**: 20 hrs × $100/hr = $2,000
-- **ROI**: ($31,200 ÷ $2,000) × 100 = 1,560% ✅
+- **Automation**: Metabase dashboard ($0/month for self-hosted, 20 hrs setup + ~2 hrs/month maintenance)
+- **Hours saved**: 6 hrs/week × 52 weeks = 312 hrs/year (theoretical)
+- **Realistic savings**: ~200-250 hrs/year (some reports still need manual input)
+- **Value**: Frees up senior team time for analysis instead of data assembly
 
 **Deliverable**: Prioritized bottleneck list (top 10 by ROI).
 
@@ -169,7 +171,7 @@ Where:
 
 **Cost**: $0 (Metabase self-hosted) or $500-$2K/month (Looker, Tableau)
 
-**ROI**: ($100K/year saved ÷ $2K setup cost) = 5,000%
+**Value**: High — replaces 20-30 hours/week of manual data assembly with self-serve dashboards
 
 ---
 
@@ -191,7 +193,7 @@ Where:
 
 **Cost**: $50-$100/user/month (Gong, Fireflies)
 
-**ROI**: ($50K/year saved ÷ $5K/year cost) = 1,000%
+**Value**: High — eliminates manual CRM data entry, improving both data quality and rep productivity
 
 ---
 
@@ -216,7 +218,7 @@ Where:
 
 **Cost**: $200-$500/month (Userpilot, Appcues)
 
-**ROI**: ($75K/year saved ÷ $6K/year cost) = 1,250%
+**Value**: High — CS team can handle 2-3x more customers by automating routine onboarding
 
 ---
 

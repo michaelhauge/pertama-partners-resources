@@ -8,15 +8,33 @@ A collection of tools, templates, and resources for technology consulting and ad
 
 ## Available Resources
 
+### AI & Automation
 | Resource | Description | Status |
 |----------|-------------|--------|
-| [Security Audit Toolkit](./security-audit-toolkit/) | Red team security assessments for developer workstations | Ready |
-| [OpenClaw SEA Guide](./openclaw-sea-guide/) | Complete OpenClaw installation guide for Southeast Asia business leaders | Ready |
-| [n8n SEA Guide](./n8n-sea-guide/) | Workflow automation guide - 90-98% cheaper than Zapier for SEA businesses | Ready |
-| [CRM Migration Guide](./crm-migration-guide/) | CRM comparison & migration guide - Save $200-500/month switching from HubSpot/Salesforce | Ready |
-| [SaaS Stack Audit Guide](./saas-optimization-guide/) | Reduce SaaS spend by 30-50% through audit, consolidation, and negotiation - Save $15K-50K/year | Ready |
-| [AI Implementation Playbook](./ai-implementation-playbook/) | Practical guide to implementing AI in business - 10 proven use cases with 10-100x ROI | In Progress |
-| *More coming soon...* | | |
+| [AI Implementation Playbook](./ai-implementation-playbook/) | 10 proven AI use cases with ROI analysis, tools comparison, and 30-Day Pilot plan | Ready |
+| [AI Model Selection Guide](./ai-model-selection-guide/) | Navigate the AI provider landscape (OpenAI, Anthropic, Google, DeepSeek) — choose the right models | Ready |
+| [AI Tooling Security Guide](./ai-tooling-security-guide/) | Safely use AI tools (Claude Code skills, MCP servers, browser extensions) without exposing your company | Ready |
+| [AI Project Knowledge Guide](./ai-project-knowledge-guide/) | AI-powered project management, knowledge capture, and team workflow automation | Ready |
+| [n8n SEA Guide](./n8n-sea-guide/) | Workflow automation — save 90-98% vs Zapier ($5.50/mo vs $75/mo) | Ready |
+| [OpenClaw SEA Guide](./openclaw-sea-guide/) | Open-source AI assistant on your own machine ($5-25/month total cost) | Ready |
+
+### Business Operations
+| Resource | Description | Status |
+|----------|-------------|--------|
+| [B2B Sales Playbook SEA](./b2b-sales-playbook-sea/) | Sales strategy with country-by-country cultural selling guides for SG, MY, ID, TH, VN, PH | Ready |
+| [Customer Success Guide SEA](./customer-success-guide-sea/) | B2B SaaS customer success framework for Southeast Asia | Ready |
+| [Founder's Scaling Guide](./founder-scaling-guide/) | Scale from $1M to $10M ARR in Southeast Asia — operations, hiring, tech stack, fundraising | Ready |
+| [CRM Migration Guide](./crm-migration-guide/) | Migrate from HubSpot/Salesforce to affordable alternatives — save $200-500/month | Ready |
+| [SaaS Cost Optimization](./saas-optimization-guide/) | Reduce SaaS spend by 30-50% through audit, consolidation, and negotiation | Ready |
+| [Remote Team Operations](./remote-team-operations/) | Managing distributed teams across SEA time zones | Ready |
+| [Quick-Win Templates](./quick-win-templates/) | 40+ copy-paste ready templates: checklists, comparisons, one-pagers | Ready |
+
+### Security & Compliance
+| Resource | Description | Status |
+|----------|-------------|--------|
+| [Security Audit Toolkit](./security-audit-toolkit/) | Red team security assessments for developer workstations (macOS, Linux) | Ready |
+| [CISO Security Guide](./ciso-security-guide/) | Enterprise security framework for IT leaders — 90-Day Security Sprint | Ready |
+| [SMB Cybersecurity Guide](./smb-cybersecurity-guide/) | Practical cybersecurity for small businesses without IT departments | Ready |
 
 ---
 
@@ -335,7 +353,7 @@ open SECURITY.md  # Data privacy and compliance
 **Tools Comparison**:
 - **ChatGPT Plus** ($20/month) - Best all-around, web search, data analysis, image generation
 - **Claude Pro** ($20/month) - Best for long documents, writing quality, privacy-focused
-- **Specialized**: Otter.ai ($10/mo for meetings), Jasper ($49/mo for marketing), Midjourney ($10/mo for images)
+- **Specialized**: Otter.ai ($10/mo for meetings), Jasper ($49/mo for marketing), Midjourney ($30/mo for images)
 
 **Security Framework**:
 - Data classification guide (Public/Internal/Confidential/Restricted)
@@ -349,12 +367,16 @@ open SECURITY.md  # Data privacy and compliance
 - Team rollout: 30 days
 - ROI measurement: Ongoing
 
-**Status**: Core framework complete (4 files)
+**Status**: Complete
 - ✅ README.md - Main guide and 30-Day Pilot
 - ✅ USE-CASES.md - 10 use cases with ROI
 - ✅ TOOLS.md - AI tool comparison
 - ✅ SECURITY.md - Data privacy and compliance
-- 🔄 Additional files in progress (prompt library, adoption strategies, detailed use case guides, templates)
+- ✅ ADOPTION.md - Team adoption strategies
+- ✅ PROMPT-LIBRARY.md - Ready-to-use prompts
+- ✅ 10 detailed use case guides in use-cases/
+- ✅ 4 policy/training templates in templates/
+- ✅ ROI calculator script
 
 [View complete AI implementation playbook →](./ai-implementation-playbook/)
 
@@ -454,8 +476,6 @@ pertama-partners-resources/
 - [ ] **Due Diligence Toolkit** - Tech DD checklists and templates
 - [ ] **Startup Tech Assessment** - CTO-as-a-Service evaluation frameworks
 - [ ] **Investment Memo Templates** - Standardized analysis formats
-- [ ] **Market Research Tools** - Industry analysis scripts
-- [ ] **Integration Playbooks** - Post-acquisition tech integration guides
 
 ---
 
@@ -482,7 +502,7 @@ cd [tool-name]
 
 ## Contributing
 
-This is a private resource repository for Pertama Partners. For questions or suggestions, contact the maintainer.
+Open source resources maintained by Pertama Partners. Contributions welcome — see individual guides for details.
 
 ---
 

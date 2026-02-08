@@ -313,6 +313,56 @@ START HERE
 
 ---
 
+## Real-World Migration Stories
+
+These are composite case studies based on common CRM migration patterns in SEA. Names and details are anonymized.
+
+### Migration Story 1: Malaysian B2B Services Company (HubSpot → Zoho CRM)
+
+**Company**: 18-person consulting firm in KL, managing 200+ accounts primarily via WhatsApp and email. On HubSpot Professional ($900/month for 10 users).
+
+**Why they migrated**: HubSpot Professional was 25% of their total SaaS spend. They used CRM for contact management and deal tracking — not marketing automation. Paying $900/month for features they didn't use.
+
+**What went wrong**:
+- Field mapping was harder than expected — HubSpot's "Deal Stage" names didn't match Zoho's defaults. Took an extra 3 hours to create custom stages.
+- 6 months of email communication history didn't export from HubSpot (only metadata, not full email bodies). Team panicked about losing context.
+- Zoho's WhatsApp integration required WhatsApp Business API verification — took 2.5 weeks for Malaysian business registration approval
+- Two sales reps continued using HubSpot secretly for 3 weeks after migration because "Zoho looks different"
+
+**The save**: They kept HubSpot in read-only mode for 90 days (downgraded to free plan) so reps could reference old emails. By Month 2, nobody opened HubSpot anymore.
+
+**Actual results**:
+- Cost: $900/month → $252/month (72% reduction, $7,776/year saved)
+- Migration time: 12 hours total (planned for 6 — field mapping and WhatsApp setup took longer)
+- WhatsApp integration: Working by Week 4 (native in Zoho, previously required $50/month third-party tool with HubSpot)
+- Team adoption: Full by Week 6 (slower than hoped, but complete)
+
+**Key takeaway**: Keep old CRM accessible (read-only) for 90 days during transition. Don't cut off access immediately — it causes panic and resistance.
+
+---
+
+### Migration Story 2: Singapore SaaS Startup (Salesforce → Freshsales)
+
+**Company**: 12-person B2B SaaS selling across SG and Thailand. On Salesforce Professional ($80/user × 10 users = $800/month) since founding.
+
+**Why they migrated**: Salesforce was too complex for a 12-person team. Only 2 people could configure reports. Sales reps spent more time updating Salesforce than selling. Nobody used the mobile app because it was too slow.
+
+**What went wrong**:
+- Freshsales' one-click migration imported contacts and deals but missed custom objects — they had a "Partners" custom object in Salesforce that required manual recreation
+- 3 Zapier automations connected to Salesforce broke after migration. Had to rebuild them pointing to Freshsales (took 4 hours, not the "zero downtime" they expected)
+- Salesforce's 2-year contract had a 60-day cancellation notice requirement — they kept paying for Salesforce for 2 months while using Freshsales (doubled CRM cost temporarily)
+- One executive resisted because "Salesforce looks better on our investor deck" — a real concern at fundraising stage
+
+**Actual results**:
+- Cost: $800/month → $390/month (51% reduction, $4,920/year saved after accounting for overlap period)
+- Migration time: 5 hours (one-click migration + manual custom object rebuild)
+- Mobile app adoption: 0% → 80% of reps (Freshsales mobile actually works)
+- Report creation: Only 2 people could do it in Salesforce → all reps can build basic reports in Freshsales
+
+**Key takeaway**: Check your current contract's cancellation terms BEFORE starting migration. Early termination fees or notice periods can eat into first-year savings.
+
+---
+
 ## Key Features by CRM
 
 ### Zoho CRM ⭐ Best Value

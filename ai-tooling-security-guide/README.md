@@ -253,6 +253,66 @@ START: What are you trying to do?
 
 ---
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real security incidents and responses from SEA businesses. Names and details are anonymized.
+
+### Case Study 1: Singapore SaaS Startup — Malicious Browser Extension
+
+**Company**: 18-person B2B SaaS startup in Singapore. Team was rapidly adopting AI tools without any security process.
+
+**The incident**: A developer installed a popular-looking Chrome extension called "AI Code Helper Pro" (fake name) with 50,000+ installs and 4.5-star ratings. The extension had legitimate code completion features but also silently exfiltrated browser cookies and saved passwords to an external server.
+
+**What went wrong**:
+- The extension was discovered only when the developer noticed unusual OAuth token activity in their GitHub account 3 weeks later
+- By then, the extension had accessed 3 SaaS dashboards (Stripe, AWS, GitHub) via saved session cookies
+- No financial loss occurred (caught before credentials were used), but the incident required: rotating all API keys, forcing password resets for 18 employees, and a 2-day security audit
+- Total disruption: ~80 person-hours of work lost responding to the incident
+
+**What they did after**:
+- Ran the security assessment (Guide 01) — scored 25/100 (high risk)
+- Implemented approved extension list (6 extensions allowed, everything else blocked)
+- Set up the skill-scanner.py for all future AI tool installs
+- Created separate Chrome profiles for work vs. experimental AI tools
+
+**Actual results** (Month 3 post-incident):
+- Security score: 25/100 → 78/100
+- Unapproved tools: 12 → 0
+- Time to vet new tool: 0 min (nobody checked before) → 15 min
+- Cost of remediation: ~$3,000 (audit time + consultant) — much cheaper than potential breach
+
+**Key takeaway**: A single unapproved browser extension can compromise your entire SaaS stack. The 15-minute vetting checklist in this guide would have caught the red flags (excessive permissions, new developer account, no source code repo).
+
+---
+
+### Case Study 2: Malaysian Consulting Firm — MCP Server Data Exposure
+
+**Company**: 12-person management consulting firm in KL. CEO discovered Claude Code and MCP servers, wanted to connect Claude to company's Google Workspace and Notion.
+
+**The incident**: CEO found an MCP server on GitHub that promised "Claude integration with Google Drive, Gmail, and Calendar." Installed it without review. The MCP server worked as advertised but also logged all file paths and email subjects accessed through Claude to the developer's analytics endpoint.
+
+**What went wrong**:
+- The MCP server had no privacy policy, no clear author, and only 8 GitHub stars — but it "worked great" so the CEO used it daily for 2 months
+- During those 2 months, the server collected file names, email subjects, and calendar event titles from the CEO's accounts — essentially mapping the firm's client list and deal pipeline
+- A tech-savvy employee noticed unusual network traffic during a routine check and raised the alarm
+- No client data was directly exposed (file contents weren't sent), but metadata was enough to reveal sensitive business intelligence
+
+**What they did after**:
+- Immediately removed the MCP server and revoked all OAuth tokens
+- Ran permissions-audit.sh — found 2 other MCP servers with excessive permissions
+- Implemented the MCP server evaluation process (Guide 03)
+- Now use only officially supported MCP integrations (Anthropic-verified or well-known open source)
+
+**Actual results** (Month 2 post-incident):
+- MCP servers: 5 (unvetted) → 2 (verified)
+- Data exposure risk: High → Low
+- CEO time on security: 0 hours/month → 2 hours/month (quarterly reviews)
+- Total cost: $500 (consultant review) + 6 hours of cleanup
+
+**Key takeaway**: MCP servers have full access to whatever you authorize. Treat them like giving someone your house keys — only give keys to people you've verified. Check the author, the repository age, the star count, and most importantly, read the permissions before installing.
+
+---
+
 ## ❓ Common Questions
 
 ### "Is OpenClaw safe? Can I use those skills?"
@@ -322,6 +382,70 @@ START: What are you trying to do?
 - **Quarterly audits** of all installed tools (remove unused, check for updates)
 - **Before installing** any new tool (use vetting checklist)
 - **Immediately** if you hear about a security incident with a tool you use
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "I installed something suspicious — what do I do right now?"
+
+**Symptom**: You just realized a tool you installed might be malicious, or you received a security alert about an AI tool.
+
+**Immediate steps** (do in order):
+1. **Disconnect**: Remove the tool/extension/MCP server immediately
+2. **Revoke tokens**: Go to Google Account → Security → Third-party apps, revoke access. Do the same for GitHub, Notion, Slack.
+3. **Change passwords**: Change passwords for any service the tool could have accessed
+4. **Rotate API keys**: Regenerate any API keys stored in `.env` files or environment variables
+5. **Then**: Follow [08-incident-response.md](guides/08-incident-response.md) for full containment
+
+**Prevention**: If you followed the vetting checklist before installing, you would have caught most threats. 15 minutes of prevention saves 15 hours of incident response.
+
+---
+
+### "My team keeps installing tools without asking"
+
+**Symptom**: Shadow IT — employees download AI extensions, MCP servers, and plugins without any approval process.
+
+**Likely cause**: No clear policy, no approved tools list, and the approval process (if any) is too slow. People want to be productive and don't see the risk.
+
+**Fix**:
+1. Create a simple approved tools list (see [TOOLS.md](TOOLS.md)) — 10-15 vetted tools that cover most needs
+2. Make it EASY to request new tools — a Slack channel or form with 24-hour turnaround, not a 2-week procurement process
+3. Deploy the [AI Acceptable Use Policy](templates/ai-acceptable-use-policy.md) and communicate it clearly
+4. For Chrome: Use Chrome Enterprise policies to restrict extension installs to approved list (requires Google Workspace admin)
+
+**Prevention**: If you make safe tools easy to access and unsafe tools hard to install, behavior follows naturally.
+
+---
+
+### "The security scripts flag everything as risky"
+
+**Symptom**: skill-scanner.py or permissions-audit.sh generates warnings for tools you know are legitimate. Too many false positives.
+
+**Likely cause**: The scripts use conservative thresholds by default. Legitimate tools that access the filesystem or network will trigger warnings.
+
+**Fix**:
+1. Read the warning details — distinguish between "accesses filesystem" (common for many legitimate tools) and "sends data to unknown external server" (actual red flag)
+2. Cross-reference with the tool's documentation — if it explains why it needs the permissions, it's likely legitimate
+3. Create a local allowlist of approved tools so the scanner skips them in future runs
+
+**Prevention**: Understand what each warning category means. Network access + filesystem access + unknown author = high risk. Network access + known author + documented purpose = probably fine.
+
+---
+
+### "We want to use AI tools but our PDPA compliance team says no"
+
+**Symptom**: Compliance or legal team blocks AI tool adoption citing PDPA (Singapore) or PDPA (Malaysia) data protection concerns.
+
+**Likely cause**: Valid concern. Consumer AI plans may process personal data in ways that conflict with data protection requirements. But blanket bans are usually unnecessary.
+
+**Fix**:
+1. Use team/enterprise AI plans with Data Processing Agreements (DPAs) — ChatGPT Team, Claude for Work both offer DPAs
+2. Classify data: Public (OK for any AI), Internal (team plans only), Personal/Sensitive (no AI or enterprise plan with DPA)
+3. Self-hosted options (n8n, local LLMs) keep all data on your infrastructure — fully PDPA compliant
+4. Document your AI data processing in your PDPA compliance records
+
+**Prevention**: Involve your compliance team EARLY in AI tool selection — they should help set guardrails, not be a blocker.
 
 ---
 

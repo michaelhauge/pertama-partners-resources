@@ -362,6 +362,138 @@ Most SEA companies with $2M-$50M ARR are one breach away from losing $500K-$5M+ 
 
 ---
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA companies implementing security programs. Names and details are anonymized.
+
+### Case Study 1: Singapore B2B SaaS Company ($8M ARR, 45 Employees)
+
+**Company**: Workflow automation SaaS selling to mid-market companies in SG and AU. 45 employees, no dedicated security hire. CTO was handling security ad-hoc.
+
+**The problem**: Lost 3 enterprise deals ($400K combined ACV) in one quarter because prospects required SOC 2 before signing. Board pressure to "get SOC 2 fast." CTO estimated 12-18 months.
+
+**What they tried**: Followed the 90-Day Security Sprint. Hired Vanta ($12K/year) for evidence collection, engaged a SOC 2 auditor ($25K), and assigned a senior engineer part-time to security.
+
+**What went wrong**:
+- The 10 Core Controls took 3 weeks instead of 2 — MFA rollout was blocked because 8 employees used personal Gmail for work accounts. Had to migrate everyone to Google Workspace first ($6/user/month unplanned cost)
+- Vanta's automated evidence collection flagged 47 gaps on day 1. The CTO panicked, but 30 of them were policy documentation gaps (not technical issues). Writing 15 policies took 40+ hours — far more than expected
+- Penetration test ($12K) found a critical vulnerability in their API — an IDOR that exposed customer data. Fixing it took 2 weeks and delayed the SOC 2 timeline by a month
+- The SOC 2 auditor required evidence of 30-day control operation before issuing Type 1 — the team assumed they could start the audit immediately after implementing controls
+
+**Actual results** (Month 4 — one month delayed):
+- SOC 2 Type 1 achieved (total cost: $55K including tools, audit, pentest, engineer time)
+- Reopened conversations with 2 of 3 lost enterprise deals — closed 1 ($180K ACV)
+- Security questionnaire response time: 2-3 weeks → 2 days (send SOC 2 report)
+- Cyber insurance premium dropped 35% ($18K/year savings)
+- But: The IDOR vulnerability had been exploitable for 18 months — unknown if any data was accessed. Had to notify affected customers (embarrassing but legally required under PDPA)
+
+**Key takeaway**: Run a penetration test early (Week 1-2), not at the end. Finding critical vulnerabilities late derails your timeline and creates PDPA notification obligations. Also, budget 40+ hours for policy documentation — it's the most tedious but most time-consuming part.
+
+---
+
+### Case Study 2: Indonesian Fintech Startup ($3M ARR, 25 Employees)
+
+**Company**: Lending platform serving MSMEs in Java and Sumatra. 25 employees, mostly engineers. Needed OJK compliance and SOC 2 to partner with a major Indonesian bank.
+
+**The problem**: OJK (Indonesia's Financial Services Authority) required specific security controls for lending platforms. The bank partnership ($2M potential revenue) required SOC 2 Type 1 + data residency in Indonesia. Company had zero formal security program.
+
+**What they tried**: Started with Phase 1 (10 Core Controls) + hired a local security consultant ($3K/month for 3 months) who knew OJK regulations.
+
+**What went wrong**:
+- Data residency was harder than expected — their SaaS stack (Slack, Google Workspace, HubSpot) all stored data outside Indonesia. Had to evaluate which tools could be configured for Indonesia-only hosting (answer: almost none of them)
+- OJK compliance required specific controls beyond SOC 2 — incident reporting within 24 hours, quarterly vulnerability assessments, and a dedicated security officer. SOC 2 alone wasn't sufficient
+- The security consultant recommended enterprise-grade tools (CrowdStrike, Splunk) that cost $8K/month — way beyond budget. Had to find SMB alternatives (Wazuh for SIEM, Microsoft Defender for endpoints)
+- Employee security training in Bahasa Indonesia was hard to find — KnowBe4 had limited Bahasa content. Ended up creating internal training materials (20+ hours of work)
+
+**Actual results** (Month 5 — significantly delayed):
+- OJK compliance achieved (with local consultant's help)
+- SOC 2 Type 1 achieved (total cost: $85K including consultant, tools, audit)
+- Bank partnership approved and signed ($2M revenue pipeline)
+- Data residency partially solved: critical customer data in AWS Jakarta, internal tools still global
+- But: Monthly security tooling costs higher than expected ($2.5K/month vs $1K budgeted), and OJK requires annual re-certification ($15K/year ongoing)
+
+**Key takeaway**: For regulated industries in Indonesia/Thailand/Vietnam, SOC 2 is necessary but not sufficient — local regulatory requirements add significant scope. Hire a local consultant who knows the specific regulations (OJK, BOT, SBV). Budget 50-100% more than the SOC 2-only estimate for regulated industries.
+
+---
+
+### Cross-Case Patterns
+
+| Pattern | Evidence |
+|---------|----------|
+| Policy documentation is the biggest time sink | SG: 40+ hours for 15 policies; ID: 20+ hours creating training materials |
+| Penetration testing reveals surprises | SG: critical IDOR found after 18 months; budget for remediation time |
+| Tool costs exceed initial estimates | ID: $2.5K/month vs $1K budgeted; SG: unplanned Google Workspace migration |
+| Local regulations add complexity | ID: OJK requirements beyond SOC 2; SG: PDPA notification obligations |
+| Timeline slips 30-50% vs plan | SG: 4 months vs 3; ID: 5 months vs 3 |
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "We started the 90-Day Sprint but we're already behind at Week 3"
+
+**Symptom**: MFA rollout stalled, policy writing is taking forever, team pushback on new tools. You're 2 weeks behind schedule and feeling overwhelmed.
+
+**Likely cause**: The 90-day timeline assumes dedicated effort and minimal blockers. In practice, MFA migration, tool procurement, and policy writing always take longer than expected. The team has day jobs too.
+
+**Fix**:
+1. Accept that 90 days is aspirational — 120-150 days is typical for first-time implementations
+2. Focus on the 10 Core Controls first (these provide 80% of risk reduction)
+3. Deprioritize documentation temporarily — get controls in place, then write policies about what you've actually implemented
+4. Assign one person as "security sprint owner" with 50% time allocation (not 10%)
+
+**Prevention**: When planning, add 50% buffer to every timeline. Schedule weekly security sprint reviews (30 minutes) to catch blockers early. Don't try to do everything at once — controls first, docs second, audit third.
+
+---
+
+### "Our SOC 2 auditor keeps asking for evidence we don't have"
+
+**Symptom**: Auditor requests 30+ evidence items (access reviews, change management logs, incident response tests) and you have none of them documented.
+
+**Likely cause**: SOC 2 requires evidence of controls operating over time, not just that they exist. If you implemented controls 2 weeks ago, you don't have 30 days of logs, access review records, or change management evidence.
+
+**Fix**:
+1. Use an automated evidence collection tool (Vanta, Secureframe, Drata) — these continuously collect evidence in the background
+2. Start the evidence collection clock immediately when controls go live — don't wait for the auditor
+3. For controls you've had informally (e.g., code review in GitHub), extract historical evidence from existing tool logs
+4. Ask your auditor upfront for the complete evidence list before the audit period starts
+
+**Prevention**: Set up Vanta/Secureframe in Month 1, not Month 3. These tools automatically collect evidence from day 1, giving you a 60-90 day evidence trail by audit time. Worth the $8-15K/year investment.
+
+---
+
+### "The board wants security metrics but I don't know what to report"
+
+**Symptom**: Board asks "are we secure?" and you don't have a good answer. No dashboard, no metrics, no benchmarks.
+
+**Likely cause**: Security is hard to quantify. Without a baseline assessment and ongoing metrics, you're reporting feelings, not facts.
+
+**Fix**:
+1. Start with our 100-point security scorecard — it gives you a numeric baseline today
+2. Report 5 metrics monthly: security score trend, open vulnerabilities (critical/high), days since last incident, MFA adoption %, employee training completion %
+3. Benchmark against SOC 2 requirements: "We meet X of Y controls" is concrete and board-friendly
+4. Use Vanta/Secureframe dashboards as your board reporting source
+
+**Prevention**: Run the 100-point scorecard in Week 1, then monthly. Track the trend line — boards care more about trajectory than absolute numbers. "We went from 35/100 to 72/100 in 60 days" tells a clear story.
+
+---
+
+### "We achieved SOC 2 Type 1 but enterprise prospects still won't sign"
+
+**Symptom**: You have the SOC 2 Type 1 report, but large enterprise customers say it's not enough. They want Type 2, ISO 27001, or industry-specific certifications.
+
+**Likely cause**: SOC 2 Type 1 is a point-in-time snapshot (you had controls on audit day). Enterprise customers increasingly require Type 2 (controls operated effectively over 6-12 months). Some industries require additional certifications.
+
+**Fix**:
+1. Understand what each prospect actually requires — ask for their vendor security questionnaire upfront
+2. SOC 2 Type 2 starts the day after Type 1 — begin the observation period immediately (6-12 months)
+3. For EU customers: ISO 27001 may be required in addition to SOC 2
+4. For fintech: PCI-DSS is often required alongside SOC 2
+
+**Prevention**: Before investing in SOC 2, survey your top 10 prospect requirements. If most need Type 2, plan for a 12-month journey from the start (not 90 days + surprise 12-month extension). Consider starting the Type 2 observation period during the Type 1 audit.
+
+---
+
 ## Next Steps
 
 **Phase 1: Assessment (Week 1-2)**

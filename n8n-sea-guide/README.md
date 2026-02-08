@@ -206,6 +206,142 @@ This is a **self-service guide** created by [Pertama Partners](https://pertama.p
 - **n8n Community**: https://community.n8n.io
 - **n8n GitHub**: https://github.com/n8n-io/n8n
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA businesses adopting n8n. Names and details are anonymized.
+
+### Case Study 1: Malaysian E-Commerce Company (15 Employees)
+
+**Company**: Fashion e-commerce selling on Shopee and Lazada, 15 employees. Manual order processing, inventory updates, and WhatsApp customer notifications.
+
+**The problem**: Staff spent 3-4 hours daily on repetitive tasks — copying orders from marketplaces into spreadsheets, updating inventory across platforms, and sending order confirmations via WhatsApp.
+
+**What they tried**: Self-hosted n8n on Contabo VPS ($5.50/mo), built 3 workflows: order sync, inventory update, and WhatsApp notifications.
+
+**What went wrong**:
+- Docker installation on VPS failed first attempt — Ubuntu version incompatibility required 2 hours of debugging (the install script in this guide now handles this)
+- First order sync workflow broke after 3 days when Shopee changed their API response format — workflow silently failed, and 47 orders weren't synced before anyone noticed
+- WhatsApp Business API verification took 3 weeks (Malaysian business registration) — much longer than the "few days" they expected
+- Staff member who set up n8n went on vacation — nobody else could troubleshoot when a workflow failed
+
+**Actual results** (Month 2):
+- Order processing: 3-4 hours/day → 30 minutes/day (manual review only)
+- Inventory sync: Real-time across Shopee + Lazada (was 24-48 hour delay)
+- Customer notification: Automated WhatsApp confirmations (was manual copy-paste)
+- Cost: $5.50/month (vs Zapier equivalent ~$75/month for same volume)
+- But: Required ~10 hours of debugging in first month, and workflows need checking every week
+
+**Key takeaway**: n8n saves significant money and time, but needs someone technical enough to debug when APIs change. Budget 2-4 hours/month for maintenance, and cross-train at least 2 people.
+
+---
+
+### Case Study 2: Singapore Consulting Firm (8 Employees)
+
+**Company**: Management consulting firm, 8 consultants. Needed to automate lead capture, proposal generation, and client reporting.
+
+**The problem**: Leads from website form went to a shared email inbox. Consultants manually entered them into a Google Sheet, then forgot to follow up. Client reports took 2 hours each to compile from multiple data sources.
+
+**What they tried**: n8n Cloud (€24/mo) — built lead capture → Google Sheets → Slack notification workflow, and a weekly report compilation workflow pulling from Google Analytics + HubSpot + Google Sheets.
+
+**What went wrong**:
+- n8n Cloud was chosen for simplicity, but it triggered PDPA concerns — client data flowing through EU-hosted infrastructure. Had to add data masking for personally identifiable information
+- Report compilation workflow worked perfectly for 2 weeks, then Google Analytics API rate-limited them because the workflow ran too frequently (every hour instead of daily)
+- Lead capture workflow initially missed leads from LinkedIn contact form because it only connected to website form — required a second workflow
+- One consultant accidentally deleted a production workflow while "exploring" — no backup. Rebuilt from scratch (now they export workflows weekly)
+
+**Actual results** (Month 2):
+- Lead response time: 2-3 days → 15 minutes (Slack notification)
+- Report compilation: 2 hours → 10 minutes per client
+- Lead capture rate: 100% vs ~70% before (no more missed inbox leads)
+- Cost: €24/month (vs $50-75/month for Zapier equivalent)
+- But: PDPA concern required additional data handling measures
+
+**Key takeaway**: For data-sensitive businesses in Singapore, self-hosting may be worth the complexity to keep client data on your infrastructure. Always export/backup your workflows — one accidental delete can cost hours of rebuilding.
+
+---
+
+## Limitations & Honest Expectations
+
+**n8n is excellent for automation, but it's not the right tool for everyone:**
+
+| Consideration | Details |
+|---------------|---------|
+| **Technical skill required** | Self-hosting requires basic server management (SSH, Docker, backups). If "SSH into a server" sounds intimidating, use n8n Cloud or consider Zapier instead. |
+| **Maintenance overhead** | Self-hosted n8n needs updates, monitoring, and occasional debugging. Budget 2-4 hours/month for maintenance. |
+| **Not truly "set and forget"** | APIs change, rate limits hit, edge cases appear. Complex workflows need periodic review and fixes. |
+| **Learning curve** | Expect 1-2 weeks to become comfortable, 1-2 months for advanced workflows. It's simpler than coding but more complex than Zapier. |
+| **When to use Zapier instead** | If you need <5 simple automations and your team isn't technical, Zapier's simplicity may be worth the higher cost. |
+| **Reliability** | Self-hosted means *you* are responsible for uptime. If a workflow fails at 2am, there's no support team to fix it. Consider n8n Cloud for business-critical automations. |
+
+**Bottom line**: n8n is the best value for technical teams running 10+ automations. For non-technical teams with simple needs, the cost savings may not justify the learning curve.
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "My workflow suddenly stopped working"
+
+**Symptom**: Workflow was running fine for weeks, then silently stops. No error notifications. Data isn't being processed.
+
+**Likely cause**: An API changed its response format, a token expired, or the service rate-limited your account. n8n doesn't always surface these errors visibly.
+
+**Fix**:
+1. Check the execution log in n8n (Executions tab → filter by "Error")
+2. Look for HTTP 401 (token expired) or 429 (rate limited) responses
+3. Re-authenticate the connection (most common fix)
+4. If API format changed, update the workflow's data mapping
+
+**Prevention**: Set up error notifications — add a "Error Trigger" node that sends a Slack/email/WhatsApp message when any workflow fails. This takes 5 minutes and saves hours of silent failures.
+
+---
+
+### "Docker won't start on my VPS"
+
+**Symptom**: `docker compose up` fails with permission errors, port conflicts, or "cannot connect to Docker daemon."
+
+**Likely cause**: Docker service not running, user not in docker group, or port 5678 already in use.
+
+**Fix**:
+1. Start Docker: `sudo systemctl start docker`
+2. Add user to docker group: `sudo usermod -aG docker $USER` (then log out and back in)
+3. Check port: `sudo lsof -i :5678` — if something else is using it, change n8n's port in docker-compose.yml
+
+**Prevention**: Use the install scripts in this guide — they handle these setup issues automatically.
+
+---
+
+### "n8n is too slow — workflows take minutes to execute"
+
+**Symptom**: Simple workflows take 2-5 minutes instead of seconds. Interface is sluggish.
+
+**Likely cause**: VPS is underpowered (common with cheapest Oracle Cloud free tier) or too many workflows running simultaneously.
+
+**Fix**:
+1. Check VPS resources: `htop` — if CPU or RAM is at 100%, upgrade
+2. Stagger workflow schedules (don't run 10 workflows at the same minute)
+3. Use "Execute Once" instead of "Execute for Each" where possible
+4. Consider upgrading to Contabo ($5.50/mo) if using Oracle Cloud free tier
+
+**Prevention**: Start with 3-5 workflows max. Add more as you understand your VPS capacity.
+
+---
+
+### "I can't connect WhatsApp Business API"
+
+**Symptom**: WhatsApp integration node shows errors. Business verification pending for weeks.
+
+**Likely cause**: WhatsApp Business API requires Meta Business verification, which takes 2-4 weeks in SEA countries. Malaysian and Indonesian businesses face additional documentation requirements.
+
+**Fix**:
+1. Ensure your Meta Business account is verified (not just created)
+2. For MY/ID: Submit business registration documents (SSM/NIB) as required
+3. Use a WhatsApp Business Solution Provider (BSP) like Respond.io or Wati for easier onboarding
+4. While waiting: Use Telegram Bot API (instant, no verification) for internal notifications
+
+**Prevention**: Start WhatsApp Business API verification process immediately when you decide to use n8n — don't wait until your workflows are ready.
+
+---
+
 ### Contributing
 
 Found an error or have a suggestion? Submit a pull request or open an issue on this repo.

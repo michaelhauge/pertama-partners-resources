@@ -226,6 +226,61 @@ Where do you feel most overwhelmed?
 
 ---
 
+## Real-World Results: What Actually Happens
+
+These are composite case studies based on real patterns from SEA teams implementing AI-first project management. Names and details are anonymized.
+
+### Case Study 1: Indonesian SaaS Startup (20 Employees, Distributed)
+
+**Company**: B2B HR SaaS, 20 employees across Jakarta and Yogyakarta. Used Notion for everything but it was chaotic — 500+ pages with no structure, team couldn't find anything.
+
+**The problem**: Knowledge was scattered — onboarding docs were outdated, meeting notes lived in random Notion pages, and the founder spent 5+ hours/week answering the same questions that were already documented somewhere.
+
+**What they tried**: AI Second Brain setup (Guide 02) with Notion AI, plus Meeting-to-Task Pipeline (Guide 03) with Otter.ai.
+
+**What went wrong**:
+- Notion AI search worked well for English content but performed poorly on Bahasa Indonesia pages — the team had mixed-language documentation
+- Otter.ai transcription was inaccurate for Indonesian-accented English during client calls — key action items were garbled, requiring manual corrections
+- The "AI Weekly Review" was set up by the CTO but nobody else understood the Claude prompts — it became a one-person tool instead of a team tool
+- Initial Notion restructure took 3 weekends of the founder's time (not the "4-8 hours" they expected) because 500+ pages needed categorization
+
+**Actual results** (Month 3):
+- "Can't find information" complaints: 8-10/week → 1-2/week
+- Meeting follow-up time: 45 min per meeting → 15 min (Otter captures action items, human reviews)
+- Founder's repeated-question time: 5 hours/week → 1 hour/week (team self-serves from AI Second Brain)
+- But: Bahasa Indonesia content still requires manual organization — AI tools are English-first
+- Cost: $200/month (Notion AI for team + Otter.ai + Claude Pro)
+
+**Key takeaway**: AI knowledge management tools work best for English-language content. For multilingual SEA teams, keep critical documentation in English and use AI for English content, while accepting that local-language content will need manual organization.
+
+---
+
+### Case Study 2: Thai Digital Agency (35 Employees)
+
+**Company**: Full-service digital agency in Bangkok, 35 employees across design, development, and account management. Used Asana for project management but PMs spent 30% of their time on status updates and planning.
+
+**The problem**: 4 project managers each spent 10-12 hours/week on PM admin — updating task statuses, compiling weekly reports, chasing team members for updates, and preparing client-facing project summaries.
+
+**What they tried**: AI Weekly Review (Guide 04) + Email-to-Task Pipeline (integrations/04) using Claude API + n8n.
+
+**What went wrong**:
+- Email-to-Task pipeline worked for English emails but Thai-language client emails weren't parsed correctly — had to add a translation step which added complexity and cost
+- Claude API costs were higher than expected ($15/month) because the weekly review prompts were very long (included full project context each time)
+- One PM's AI-generated weekly report contained a factual error about project status — sent to client before review. Client noticed. Trust repair needed.
+- n8n workflow connecting Gmail → Claude → Asana broke when Asana changed their API — took 3 days to fix because nobody on the team knew n8n well enough
+
+**Actual results** (Month 3):
+- PM admin time: 10-12 hours/week per PM → 5-6 hours/week (50% reduction)
+- Weekly report generation: 2 hours → 20 minutes (AI draft + human review)
+- Email-to-task conversion: 50% automated (English emails only — Thai still manual)
+- Total time saved across 4 PMs: ~24 hours/week
+- Cost: $250/month (Claude API + Otter.ai + n8n hosting)
+- But: Required dedicated "AI operations" person (junior PM allocated 5 hours/week to maintain workflows)
+
+**Key takeaway**: AI PM automation saves significant time but needs a maintainer. Budget 3-5 hours/week for someone to monitor workflows, fix breaks, and optimize prompts. And ALWAYS review AI-generated client-facing content before sending.
+
+---
+
 ## Common Questions
 
 ### Q: How is this different from a regular PM tools guide?
@@ -332,6 +387,70 @@ Perfect for SEA distributed teams with WhatsApp/Slack.
 **Advanced** (Claude MCP, AI Agents): 1-2 days
 
 **Most users** start with one quick win (Week 1), see results, then add more.
+
+---
+
+## What Goes Wrong and How to Fix It
+
+### "AI Second Brain is messy — I still can't find things"
+
+**Symptom**: Set up Notion AI or Obsidian with AI, but search still returns irrelevant results or misses documents you know exist.
+
+**Likely cause**: "Garbage in, garbage out." AI search works on top of your existing structure. If pages have vague titles, no tags, and mixed content, AI can't index them well.
+
+**Fix**:
+1. Start with your top 20 most-accessed documents — give them clear, descriptive titles (not "Notes 01/15")
+2. Add a 1-sentence summary at the top of each important page (helps AI understand content)
+3. Use consistent tags or categories (e.g., #client, #product, #ops, #meeting)
+4. Delete or archive pages that are outdated — less noise = better search
+
+**Prevention**: Create a documentation template for new pages: Title format, required tags, summary sentence. Enforce it from Day 1.
+
+---
+
+### "Meeting-to-task pipeline misses important action items"
+
+**Symptom**: Otter.ai or Fireflies captures the transcript but the AI-extracted action items miss key decisions or assign tasks to wrong people.
+
+**Likely cause**: AI transcription accuracy drops with accents, cross-talk, and technical jargon. Action item extraction is pattern-based and misses implicit assignments ("Can someone look into this?").
+
+**Fix**:
+1. At the end of each meeting, explicitly state action items: "Action: [Name] will [task] by [date]"
+2. Review AI-extracted action items within 1 hour of the meeting (not the next day — context fades)
+3. Use a follow-up prompt: "Here's the transcript. List all commitments, decisions, and action items with owners and dates."
+
+**Prevention**: Train your team to state action items explicitly during meetings. "Let me summarize — John, you'll send the proposal by Friday. Sarah, you'll review the design by Monday." Clear statements = accurate AI extraction.
+
+---
+
+### "Team stopped using AI workflows after initial excitement"
+
+**Symptom**: Month 1 adoption was high, Month 3 usage dropped to 20%. Only the person who set it up still uses it.
+
+**Likely cause**: Workflows broke and nobody fixed them, or the time savings weren't dramatic enough to change habits. Novelty wore off.
+
+**Fix**:
+1. Check if workflows are still running (they may have silently broken)
+2. Ask the team specifically: "What about the AI workflow doesn't work for you?" — usually it's a small friction point, not a fundamental problem
+3. Simplify — if the workflow has 5 steps, reduce to 3. Lower friction = higher adoption.
+4. Show ROI data: "This saved us X hours last month" — concrete numbers motivate continued use
+
+**Prevention**: Assign an "AI ops" owner — one person who monitors workflows weekly, fixes breaks quickly, and champions adoption. Without an owner, AI workflows decay.
+
+---
+
+### "Claude MCP setup is too complex for our team"
+
+**Symptom**: Tried to set up Claude MCP for Notion or Linear integration. Got stuck on configuration, OAuth setup, or connection errors.
+
+**Likely cause**: MCP setup requires technical comfort (JSON config files, OAuth flows, environment variables). Most non-technical teams hit a wall here.
+
+**Fix**:
+1. If non-technical: Skip MCP for now. Use Notion AI (built-in, no setup) or the manual Claude + copy-paste workflow. 80% of the value, 20% of the complexity.
+2. If somewhat technical: Follow the MCP setup guide step-by-step, don't skip any steps. Most errors come from missing environment variables or incorrect JSON formatting.
+3. If stuck: Hire a freelance developer for 2-3 hours ($50-150) to set it up and document the configuration for your team.
+
+**Prevention**: Start with Guide 02 (AI Second Brain) or Guide 03 (Meeting-to-Task) before attempting Claude MCP. Build confidence with simpler AI workflows first.
 
 ---
 

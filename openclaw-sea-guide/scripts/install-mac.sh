@@ -95,7 +95,7 @@ case $llm_choice in
         ;;
     3)
         LLM_PROVIDER="anthropic"
-        LLM_MODEL="anthropic/claude-opus-4-5"
+        LLM_MODEL="anthropic/claude-sonnet-4-5-20250929"
         print_msg "Selected: Claude"
         ;;
     4)

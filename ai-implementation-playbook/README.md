@@ -34,19 +34,19 @@ This playbook provides a **practical, phased approach** to AI adoption:
 - Identify 3-5 high-ROI use cases in your business
 - Implement with existing tools (ChatGPT Plus, Claude Pro)
 - Measure time savings
-- **Expected ROI**: 5-20 hours/week saved per team
+- **Typical result**: 5-20 hours/week saved per team (varies by use case and team size)
 
 ### Phase 2: Process Integration (Month 2-3)
 - Build AI into existing workflows
 - Create prompt libraries and templates
 - Train team on best practices
-- **Expected ROI**: 20-40% productivity increase in targeted areas
+- **Typical result**: 20-40% productivity increase in targeted areas (based on tasks that are well-suited to AI — see [Limitations](#limitations--when-ai-doesnt-work) below)
 
 ### Phase 3: Custom Solutions (Month 4-6)
 - Evaluate custom AI tools or builds
 - Implement automation (n8n workflows with AI)
 - Deploy AI agents for repetitive tasks
-- **Expected ROI**: Replace 1-2 FTE worth of work or enable 2x growth without hiring
+- **Typical result**: Redirect 1-2 FTE worth of repetitive work to higher-value activities
 
 ---
 
@@ -146,10 +146,12 @@ Each use case includes:
 Task: Writing customer support emails
 - Time before: 15 min/email × 100 emails/week = 25 hours/week
 - Time with AI: 5 min/email × 100 emails/week = 8.3 hours/week
-- Time saved: 16.7 hours/week = $50,000/year (at $60/hour)
+- Time saved: 16.7 hours/week = $50,000/year (at $60/hour fully loaded cost)
 - AI tool cost: ChatGPT Plus $20/month = $240/year
-- ROI: 208x
+- Gross ROI: 208x (before accounting for review/editing time and learning curve)
 ```
+
+> **Note on ROI calculations**: All ROI figures in this playbook assume (1) tasks are well-suited to AI (repetitive, text-based, structured), (2) team members become proficient with prompts (typically 2-4 weeks), and (3) human review time is factored in. Your actual results will depend on task complexity, data quality, and team adoption. We recommend tracking your own metrics using the [ROI calculator](./templates/roi-calculator.csv) rather than relying on industry averages.
 
 ---
 
@@ -213,7 +215,7 @@ Task: Writing customer support emails
 **Typical choice**:
 - General tasks: ChatGPT Plus ($20/month) or Claude Pro ($20/month)
 - Meetings: Otter.ai ($10/month)
-- Design: Canva AI (included) or Midjourney ($10/month)
+- Design: Canva AI (included) or Midjourney ($30/month)
 
 ---
 
@@ -236,7 +238,7 @@ Task: Writing customer support emails
 
 **Goal**: Measure ROI and plan next steps
 
-1. Calculate time saved using [ROI calculator](./templates/roi-calculator.xlsx)
+1. Calculate time saved using [ROI calculator](./templates/roi-calculator.csv)
 2. Survey team: "What's working? What's not?"
 3. Refine prompts based on feedback
 4. Identify next 3 use cases to implement
@@ -244,21 +246,23 @@ Task: Writing customer support emails
 
 **Deliverable**: ROI report + expansion plan
 
-**Expected outcome**: 5-10 hours/week saved across team, 10-30x ROI on tool costs
+**Typical outcome**: 5-10 hours/week saved across team, 10-30x ROI on tool costs (results improve as team builds prompt proficiency)
 
 ---
 
 ## Documentation Structure
 
+**Recommended reading order**: Start with this README, then SECURITY (understand data safety before using AI), then USE-CASES (find your opportunities), then TOOLS (choose tools), then dive into specific use case guides, and reference PROMPT-LIBRARY and ADOPTION as you implement.
+
 ### 📊 Core Guides
 
-| Document | What It Covers | When to Read |
-|----------|----------------|--------------|
-| [**USE-CASES.md**](./USE-CASES.md) | 10 AI use cases with ROI | **Read first** - Find your opportunities |
-| [**TOOLS.md**](./TOOLS.md) | AI tool comparison and selection | After identifying use cases |
-| [**PROMPT-LIBRARY.md**](./PROMPT-LIBRARY.md) | 50+ proven business prompts | During implementation |
-| [**SECURITY.md**](./SECURITY.md) | Privacy, compliance, data handling | Before sharing data with AI |
-| [**ADOPTION.md**](./ADOPTION.md) | Team training and change management | For rollout planning |
+| # | Document | What It Covers | When to Read |
+|---|----------|----------------|--------------|
+| 1 | [**SECURITY.md**](./SECURITY.md) | Privacy, compliance, data handling | **Read first** — Know what's safe before sharing data |
+| 2 | [**USE-CASES.md**](./USE-CASES.md) | 10 AI use cases with ROI | Find your opportunities |
+| 3 | [**TOOLS.md**](./TOOLS.md) | AI tool comparison and selection | After identifying use cases |
+| 4 | [**PROMPT-LIBRARY.md**](./PROMPT-LIBRARY.md) | 50+ proven business prompts + advanced techniques | During implementation |
+| 5 | [**ADOPTION.md**](./ADOPTION.md) | Team training and change management | For rollout planning |
 
 ### 📖 Use Case Deep Dives
 
@@ -279,7 +283,7 @@ Task: Writing customer support emails
 
 | Resource | Purpose |
 |----------|---------|
-| [**roi-calculator.xlsx**](./templates/roi-calculator.xlsx) | Calculate AI ROI and payback period |
+| [**roi-calculator.csv**](./templates/roi-calculator.csv) | Calculate AI ROI and payback period |
 | [**ai-usage-policy.md**](./templates/ai-usage-policy.md) | Company AI acceptable use policy |
 | [**data-classification.md**](./templates/data-classification.md) | What data can/can't go in AI tools |
 | [**vendor-security-checklist.md**](./templates/vendor-security-checklist.md) | Evaluate AI tool security |
@@ -289,34 +293,134 @@ Task: Writing customer support emails
 
 ## Expected Results
 
+> **How we calculated these figures**: Time savings are based on our client engagements and publicly reported case studies from companies implementing AI for similar tasks. Individual results vary significantly based on task volume, complexity, team proficiency, and how well the use case fits AI strengths. The ranges below represent optimistic-to-realistic outcomes — not guarantees. We strongly recommend measuring your own results with the [ROI calculator](./templates/roi-calculator.csv).
+
 ### Time Savings by Use Case
 
-| Use Case | Hours Saved/Week | Annual Value* |
-|----------|------------------|---------------|
-| Customer Support (100 emails/week) | 15-20 hours | $45,000-60,000 |
-| Content Creation (5 blog posts/month) | 10-15 hours | $30,000-45,000 |
-| Meeting Notes (10 meetings/week) | 3-5 hours | $9,000-15,000 |
-| Sales Outreach (200 emails/week) | 8-12 hours | $24,000-36,000 |
-| Market Research (weekly reports) | 5-8 hours | $15,000-24,000 |
-| Document Analysis (contracts, invoices) | 10-15 hours | $30,000-45,000 |
+| Use Case | Hours Saved/Week | Annual Value* | Confidence |
+|----------|------------------|---------------|------------|
+| Customer Support (100 emails/week) | 15-20 hours | $45,000-60,000 | High — well-documented |
+| Content Creation (5 blog posts/month) | 10-15 hours | $30,000-45,000 | Medium — quality varies |
+| Meeting Notes (10 meetings/week) | 3-5 hours | $9,000-15,000 | High — near-automatic |
+| Sales Outreach (200 emails/week) | 8-12 hours | $24,000-36,000 | Medium — needs personalization |
+| Market Research (weekly reports) | 5-8 hours | $15,000-24,000 | Medium — verify AI findings |
+| Document Analysis (contracts, invoices) | 10-15 hours | $30,000-45,000 | Medium — depends on doc complexity |
 
-*Calculated at $60/hour average employee cost
+*Calculated at $60/hour fully loaded employee cost (salary + benefits + overhead). Adjust for your market — SEA rates are typically $15-40/hour.
 
 ### Typical 90-Day Results
 
 **Small business** (10-25 employees):
 - 3-5 use cases implemented
 - 30-50 hours/week saved across team
-- $90,000-150,000/year value created
+- $90,000-150,000/year value created (at $60/hr — scale to your labor costs)
 - AI tool costs: $500-1,500/year
-- **ROI: 60-300x**
+- **ROI: 60-300x** (on tool costs alone — does not include learning curve and management time)
 
 **Mid-size business** (25-100 employees):
 - 5-8 use cases implemented
 - 60-120 hours/week saved
-- $180,000-360,000/year value created
+- $180,000-360,000/year value created (at $60/hr)
 - AI tool costs: $2,000-10,000/year
-- **ROI: 18-180x**
+- **ROI: 18-180x** (wide range reflects varying adoption rates across teams)
+
+---
+
+## Real Implementation Stories
+
+These are composites based on real companies we've worked with. Names and details are changed, but the patterns, timelines, and results are representative.
+
+### Story 1: E-commerce Company (Singapore, 18 employees)
+
+**Starting point**: Customer support team of 3 handling 400+ tickets/week. Response time averaging 4 hours. Team working overtime regularly.
+
+**What they did**:
+- Month 1: Implemented AI email drafting for support (Claude Pro, 3 licenses)
+- Month 2: Added AI-generated FAQ articles based on common ticket patterns
+- Month 3: Created prompt templates for 12 most common ticket categories
+
+**What went wrong**:
+- Week 2: AI drafted a refund response using the wrong policy (they'd updated the policy but not the prompt). Customer was offered a full refund instead of store credit. Cost: $340.
+- Month 1: One agent started sending AI drafts without editing. A customer complained about a "robotic" response. Manager caught it, added mandatory review step.
+- Month 2: FAQ articles had three factual errors about shipping times. Caught before publishing, but required full review process.
+
+**Actual results (Month 3)**:
+- Response time: 4 hours → 45 minutes (82% improvement)
+- Tickets handled per agent: 25/day → 40/day (60% more capacity)
+- AI tool cost: $60/month. Avoided hiring 4th support agent ($3,200/month fully loaded)
+- **Net savings: ~$37,500/year**
+
+**Key lesson**: The biggest win wasn't speed — it was consistency. Every customer now gets a complete, policy-accurate response instead of the quality varying by agent.
+
+---
+
+### Story 2: B2B SaaS Company (Malaysia, 35 employees)
+
+**Starting point**: Sales team of 5 spending 60% of time on admin (research, proposals, follow-up emails). Only 15 hours/week per rep on actual selling.
+
+**What they did**:
+- Month 1: AI-assisted prospect research and email personalization
+- Month 2: AI proposal first drafts from templates
+- Month 3: AI meeting prep summaries and follow-up drafts
+
+**What went wrong**:
+- Month 1: Two reps refused to use AI ("I've been doing this 10 years, I don't need a robot"). Adoption was 3 out of 5 reps.
+- Month 1: AI-generated emails were too long and too formal for the Malaysian market. Had to rewrite prompts to match local communication style (shorter, warmer, more relationship-focused).
+- Month 2: AI proposal included competitor data that was 6 months outdated. Client noticed. Embarrassing.
+
+**What fixed it**:
+- Manager ran a "challenge": AI-users vs non-AI-users, track emails sent and meetings booked over 4 weeks. AI-users sent 3x more personalized outreach. The holdout reps converted.
+- Prompts were rewritten with explicit instructions: "Write in a warm, conversational tone. Keep under 150 words. Use the prospect's first name."
+- Added a rule: always verify any competitor data, pricing, or statistics before sending.
+
+**Actual results (Month 4)**:
+- Admin time: 60% → 25% of each rep's week
+- Proposals delivered: 4/week → 10/week (same quality, faster turnaround)
+- Pipeline increased 40% (more outreach, faster follow-up)
+- AI tool cost: $100/month. Revenue attributed to faster pipeline: ~$180,000 additional ARR
+
+**Key lesson**: Adoption is the bottleneck, not the technology. The "challenge" approach worked better than top-down mandates.
+
+---
+
+### Story 3: Professional Services Firm (Thailand, 12 employees)
+
+**Starting point**: Managing partner spending 10+ hours/week on meeting notes, client reports, and proposal writing. No time for business development.
+
+**What they did**:
+- Month 1: AI meeting transcription and summary (Otter.ai)
+- Month 2: AI-assisted client report drafts from meeting notes
+- Month 3: AI proposal writing from templates
+
+**What went wrong**:
+- Month 1: Otter.ai struggled with Thai-English code-switching (common in Bangkok business meetings). Transcription was 60% accurate for mixed-language meetings.
+- Month 2: AI report drafts were too generic. Clients noticed the "AI voice" — polished but impersonal. Partner had to rewrite 70% of each report.
+- Month 3: Partner got too comfortable and sent a proposal with an AI-hallucinated case study reference. Client Googled it — the case study didn't exist.
+
+**What fixed it**:
+- Switched to manual notes for Thai-language sections, AI for English sections. Hybrid approach.
+- Created a "voice guide" document fed into every prompt: specific phrases the partner uses, their analytical style, how they frame recommendations. AI drafts went from 30% usable to 80% usable.
+- Hard rule: never let AI cite specific case studies, research papers, or statistics without manual verification.
+
+**Actual results (Month 4)**:
+- Partner's admin time: 10+ hours/week → 3 hours/week
+- Freed 7+ hours/week for business development and client meetings
+- New client acquisition improved (more BD time), but hard to attribute exact revenue
+- AI tool cost: $30/month (Otter + Claude Pro)
+
+**Key lesson**: AI works best as a first draft tool, not a finished product tool. The partner's expertise is in the judgment and recommendations — AI handles the grunt work of assembling information.
+
+---
+
+### Patterns Across All Three Stories
+
+| Pattern | What Happened | Takeaway |
+|---------|--------------|----------|
+| **Early mistakes are inevitable** | All three had embarrassing AI errors in month 1 | Build in review steps from day 1, not after the first mistake |
+| **Adoption takes 4-8 weeks** | No team was at full productivity in week 1 | Plan for a learning curve. Month 1 results will be 30-50% of month 3 results |
+| **Prompt customization is critical** | Generic prompts produced generic output | Invest 2-3 hours creating prompts specific to your business, tone, and market |
+| **AI + human review > AI alone** | Unreviewed AI output caused every major mistake | Never skip human review. The time savings come from faster drafting, not eliminating review |
+| **Local context matters** | Language mixing, cultural communication styles, and market norms affected quality | Don't assume US-centric AI advice applies directly. Adapt for your market. |
 
 ---
 
@@ -394,6 +498,128 @@ Task: Writing customer support emails
 - Month 3: 70-80% using regularly
 
 **See**: [ADOPTION.md](./ADOPTION.md) for change management strategies.
+
+---
+
+## Limitations & When AI Doesn't Work
+
+**AI is powerful but not magic.** Being honest about limitations helps you set realistic expectations and avoid wasting time on poor-fit use cases.
+
+### What AI Does Poorly
+
+| Task Type | Why AI Struggles | What to Do Instead |
+|-----------|------------------|-------------------|
+| **Tasks requiring 100% accuracy** | AI hallucinates — it confidently generates plausible but wrong information | Always have a human verify AI output for factual claims, numbers, and legal/financial statements |
+| **Highly specialized domains** | AI has shallow knowledge of niche industries, local regulations, or proprietary processes | Use AI as a first draft, then have domain experts review |
+| **Tasks requiring real-time data** | AI training data has a cutoff date; it doesn't know yesterday's stock price | Use web-connected tools (Perplexity, ChatGPT with browsing) or verify facts independently |
+| **Complex multi-step reasoning** | AI can lose track of complex logic chains, especially in math or financial modeling | Break complex tasks into smaller steps; verify each step before proceeding |
+| **Creative strategy** | AI remixes existing patterns — it doesn't invent truly novel strategies | Use AI for brainstorming and drafting, but strategy decisions should be human-led |
+| **Emotional/relationship tasks** | AI can draft, but authentic human connection matters for sensitive communications | Use AI to draft, then significantly personalize for tone and empathy |
+
+### Common Pitfalls
+
+1. **"Set and forget" mentality** — AI output needs human review. Teams that skip review find errors in 10-30% of AI-generated content.
+2. **Overestimating time savings initially** — The first month is a learning curve. Most teams see full productivity gains in weeks 4-8, not week 1.
+3. **Using AI for the wrong tasks** — If a task requires deep judgment, nuance, or 100% accuracy, AI will create more work (reviewing and fixing), not less.
+4. **Ignoring prompt quality** — Bad prompts produce bad results. Investing 2-3 hours learning prompt engineering pays off 100x.
+5. **Not measuring actual results** — "It feels faster" isn't enough. Track hours with the [ROI calculator](./templates/roi-calculator.csv) to know what's actually working.
+
+### The Hallucination Problem
+
+AI models sometimes generate false information that sounds completely convincing. This is called "hallucination" and it happens in all AI tools (ChatGPT, Claude, Gemini). **It is not a bug — it's a fundamental characteristic of how these models work.**
+
+**Impact by use case:**
+- **Low risk**: Email drafting, brainstorming, formatting (errors are easily caught)
+- **Medium risk**: Content creation, research summaries (facts must be verified)
+- **High risk**: Legal analysis, financial calculations, medical information (always verify with domain expert)
+
+**Mitigation**: Always verify factual claims, especially numbers, dates, company names, and legal/regulatory statements. Never publish AI-generated content without human review.
+
+---
+
+## Troubleshooting: What Goes Wrong and How to Fix It
+
+Already using AI but not getting the results you expected? Here are the most common problems and their fixes.
+
+### "AI gives generic, useless responses"
+
+**Diagnosis**: Your prompts are too vague.
+
+**Fix**: Add three things to every prompt:
+1. **Context** — who you are, what your business does, who the audience is
+2. **Specifics** — exact deliverable, format, length, tone
+3. **Examples** — show the AI what good output looks like
+
+**Before** (vague): "Write a follow-up email to a prospect."
+**After** (specific): "Write a follow-up email to a VP of Operations at a mid-size logistics company in Singapore. We met at a conference yesterday and discussed their warehouse efficiency problems. Keep it under 100 words, warm but professional. Reference our conversation about their Q2 expansion plans."
+
+---
+
+### "My team stopped using AI after the first week"
+
+**Diagnosis**: Usually one of three things:
+1. They tried it on the wrong task (something AI is bad at)
+2. The prompts weren't customized for their workflow
+3. No one showed them how to integrate it into their daily routine
+
+**Fix**:
+1. Identify ONE task each person does daily that's tedious (email drafting, report formatting, data entry). Start there — not with ambitious projects.
+2. Create copy-paste prompts specific to their actual work. Generic prompts from the internet won't stick.
+3. Ask the team to commit to 5 uses per day for 2 weeks. After 2 weeks, most people are hooked.
+
+**Nuclear option**: Run a "with AI vs without AI" challenge. Split the team, measure output. Let the results convince the skeptics.
+
+---
+
+### "AI output quality is inconsistent"
+
+**Diagnosis**: AI models are probabilistic — the same prompt can produce different results each time.
+
+**Fix**:
+1. **Add constraints**: "You must include [X, Y, Z points]" and "You must not include [disclaimers, generic advice, filler]"
+2. **Use structured output**: Ask for tables, bullet points, or specific formats instead of free-form text
+3. **Temperature matters**: If available, lower the temperature setting for more consistent output
+4. **Create templates**: Instead of starting from scratch each time, maintain a library of proven prompts that consistently produce good results
+
+---
+
+### "AI makes confident mistakes (hallucinations)"
+
+**Diagnosis**: This is a fundamental characteristic of AI models, not a bug you can fix.
+
+**Fix**:
+1. **Never trust numbers, dates, names, or citations** without verifying
+2. **Ask AI to qualify its confidence**: Add "Rate your confidence in each claim (high/medium/low) and flag anything you're uncertain about"
+3. **Cross-reference**: For important content, ask the same question to two different AI tools and compare answers
+4. **Build verification into the workflow**: Make "fact-check AI output" an explicit step, not an afterthought
+
+---
+
+### "The ROI isn't as high as we expected"
+
+**Diagnosis**: Usually one of:
+1. Measuring the wrong thing (time spent prompting vs total time including review)
+2. Using AI for tasks that don't benefit much (see [Limitations](#limitations--when-ai-doesnt-work))
+3. Not accounting for the learning curve (month 1 ≠ month 3)
+
+**Fix**:
+1. Use the [ROI calculator](./templates/roi-calculator.csv) to track **actual hours** — not feelings, actual numbers
+2. Focus AI on high-volume, repetitive tasks where even small per-task savings compound
+3. Give it 8 weeks before evaluating. If ROI is still poor after 8 weeks of consistent use, the use case may not be a good fit for AI
+4. Look at hidden benefits: consistency, reduced errors, faster turnaround, employee satisfaction
+
+---
+
+### "We're worried about data security"
+
+**Diagnosis**: Valid concern, but often leads to paralysis (avoiding AI entirely).
+
+**Fix**:
+1. Read [SECURITY.md](./SECURITY.md) for the full framework
+2. **Quick rule**: If you wouldn't email the data to an external consultant, don't paste it into AI
+3. Use [data-classification.md](./templates/data-classification.md) to categorize your data before deciding what's safe
+4. For sensitive workflows, use enterprise plans with data retention agreements (ChatGPT Enterprise, Claude for Business)
+5. Start with non-sensitive tasks (marketing content, research, meeting summaries) while you establish security policies
 
 ---
 

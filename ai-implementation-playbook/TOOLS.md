@@ -30,9 +30,74 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 
 ---
 
-##
+## Which Tool Should I Pick? (Decision Tree)
 
- Tool Comparison Matrix
+Don't read the full comparison matrix unless you need to. Answer these 3 questions and get your answer:
+
+### Question 1: What's your primary use case?
+
+```
+What will you use AI for MOST?
+
+├── Writing (emails, content, proposals, documentation)
+│   └── → Claude Pro ($20/month)
+│       Best-in-class writing quality, handles long documents
+│
+├── Research (competitor analysis, market trends, fact-finding)
+│   └── → Perplexity Pro ($20/month)
+│       Provides sources/citations, always current data
+│
+├── Data analysis (spreadsheets, reports, visualizations)
+│   └── → ChatGPT Plus ($20/month)
+│       Built-in Python code execution, chart generation
+│
+├── Images and design
+│   └── → ChatGPT Plus ($20/month) for quick images
+│       OR Midjourney ($30/month) for professional quality
+│
+├── Meeting notes and transcription
+│   └── → Otter.ai ($10/month) or Fathom (free)
+│       Dedicated tools beat general AI for this
+│
+└── Multiple use cases / not sure
+    └── → ChatGPT Plus ($20/month) to start
+        Most versatile. Add Claude Pro later if you need better writing.
+```
+
+### Question 2: What's your budget?
+
+| Monthly Budget | Recommendation | Coverage |
+|---------------|----------------|----------|
+| **$0** | ChatGPT Free + Claude Free | Limited but useful for testing |
+| **$20/month** | ChatGPT Plus OR Claude Pro (pick based on Q1) | Covers 80% of needs for 1 power user |
+| **$40/month** | ChatGPT Plus + Claude Pro | Best combo — research + writing |
+| **$50-100/month** | Above + Perplexity Pro or specialized tool | Full coverage for 1-2 power users |
+| **$200+/month** | Team licenses (ChatGPT Team $25/user, Claude Team $25/user) | 5+ users with shared workspace |
+
+### Question 3: Do you have security/compliance requirements?
+
+```
+Does your industry require data to stay on specific servers?
+├── YES (healthcare, finance, government)
+│   └── → Enterprise plans only (ChatGPT Enterprise, Claude for Business)
+│       These offer: no training on your data, SOC 2 compliance, data residency options
+│
+└── NO (most businesses)
+    └── → Pro/Plus plans are fine for non-sensitive data
+        Just follow the data classification guide: [data-classification.md](./templates/data-classification.md)
+```
+
+### The 80/20 Answer
+
+**If you only buy one tool**: ChatGPT Plus ($20/month). It's the most versatile.
+
+**If you buy two**: ChatGPT Plus + Claude Pro ($40/month). Use ChatGPT for research/data, Claude for writing/documents.
+
+**If budget is tight**: Start with free tiers of both. Upgrade whichever you use more after 2 weeks.
+
+---
+
+## Tool Comparison Matrix
 
 ### General-Purpose AI Assistants
 
@@ -41,7 +106,7 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 | **ChatGPT Plus** | $20/mo | All-around business tasks | Web search, image gen, data analysis, plugins | Sometimes verbose |
 | **Claude Pro** | $20/mo | Writing, long documents | Document analysis, instruction-following | No web search or images |
 | **Gemini Advanced** | $20/mo | Google Workspace users | Gmail/Docs integration, real-time data | Less capable than ChatGPT/Claude |
-| **Microsoft Copilot** | $30/mo | Microsoft 365 users | Office integration, enterprise features | Requires Microsoft 365 |
+| **Microsoft Copilot** | $30/mo + M365 | Microsoft 365 users | Office integration, enterprise features | Total ~$42/mo (requires M365 ~$12/mo) |
 | **Perplexity Pro** | $20/mo | Research and fact-finding | Citations, up-to-date info | Not great for creative tasks |
 
 ---
@@ -54,7 +119,7 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 | **Copy.ai** | $49/mo | Sales/marketing copy | Email sequences, landing pages |
 | **Otter.ai** | $10/mo | Meeting transcription | Zoom/Google Meet notes |
 | **Fireflies.ai** | $10/mo | Meeting transcription | Similar to Otter |
-| **Midjourney** | $10/mo | Image generation | Marketing visuals, product mockups |
+| **Midjourney** | $30/mo | Image generation | Marketing visuals, product mockups |
 | **Canva AI** | Free-$13/mo | Design + AI writing | Social graphics, presentations |
 | **Grammarly** | $12/mo | Writing improvement | Email/doc editing |
 | **Notion AI** | $10/mo/user | Knowledge management | Meeting notes, project docs |
@@ -68,13 +133,12 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 **Price**: $20/month per user
 
 **What you get**:
-- GPT-4 access (most advanced model)
-- GPT-4o (faster, multimodal)
+- GPT-4o and o-series reasoning models
 - DALL-E 3 image generation
 - Advanced Data Analysis (code interpreter)
-- Web browsing with Bing
+- Web browsing
 - Custom GPTs (build your own AI assistants)
-- 80 messages per 3 hours (generous limit)
+- Generous usage limits
 
 **Best use cases**:
 - ✅ Customer support (response drafting)
@@ -86,10 +150,9 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 **Limitations**:
 - ❌ Sometimes hallucinates (makes up facts)
 - ❌ Can be overly verbose
-- ❌ Knowledge cutoff (training data ends 2023)
 
 **Data privacy**:
-- ✅ ChatGPT Plus conversations NOT used for training (as of March 2023)
+- ✅ ChatGPT Plus conversations NOT used for training by default
 - ❌ Free tier conversations MAY be used for training
 - ✅ Enterprise tier ($60/user/month) includes SSO, admin controls
 - ⚠️ Don't share: Customer PII, financial data, trade secrets
@@ -106,8 +169,8 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 **Price**: $20/month per user
 
 **What you get**:
-- Claude 3.5 Sonnet (latest model)
-- 200K token context (5x more than ChatGPT)
+- Claude Sonnet 4.5 / Opus 4.6 (latest models)
+- 200K token context
 - Artifacts (interactive documents/code/diagrams)
 - Priority access during high demand
 - Early access to new features
@@ -120,9 +183,7 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 - ✅ Data extraction from PDFs
 
 **Limitations**:
-- ❌ No web browsing (can't access current info)
-- ❌ No image generation
-- ❌ Smaller plugin/GPT ecosystem
+- ❌ Smaller plugin/ecosystem than ChatGPT
 
 **Data privacy**:
 - ✅ Conversations NOT used for training
@@ -143,7 +204,7 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 **Price**: $20/month (includes 2TB Google storage)
 
 **What you get**:
-- Gemini Ultra 1.0 (Google's most advanced model)
+- Gemini 2.0 (Google's most advanced model)
 - Gmail, Docs, Sheets, Slides integration
 - Real-time information access
 - Image generation with Imagen
@@ -289,7 +350,7 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 
 ### Midjourney (Image Generation)
 
-**Price**: $10/month (Basic), $30/month (Standard)
+**Price**: $30/month (Standard)
 
 **Best for**: Marketing teams needing custom visuals
 
@@ -298,10 +359,9 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 - Commercial usage rights
 - Image variations and editing
 - Style consistency
-- Community gallery
+- Web interface and Discord access
 
 **Limitations**:
-- Discord-based (no web interface)
 - Learning curve for prompts
 - Can't generate text in images reliably
 
@@ -330,7 +390,7 @@ This guide compares AI tools across pricing, capabilities, use cases, and data p
 |------|----------|------------|----------------|
 | **ChatGPT** | $20/mo | $60/mo | SSO, admin controls, unlimited messages, analytics |
 | **Claude** | $20/mo | Contact sales | SSO, BAA (HIPAA), custom contracts |
-| **Microsoft Copilot** | $30/mo | $30/mo | Already enterprise-grade |
+| **Microsoft Copilot** | $30/mo + M365 | $30/mo + M365 | Already enterprise-grade |
 | **Jasper** | $49/mo | $125/mo | Brand voice, team workspaces |
 
 ---
@@ -468,6 +528,8 @@ If you have:
 - **[USE-CASES.md](./USE-CASES.md)** - Identify which AI use cases apply to your business
 - **[PROMPT-LIBRARY.md](./PROMPT-LIBRARY.md)** - Get started faster with proven prompts
 - **[SECURITY.md](./SECURITY.md)** - Understand data privacy before sharing sensitive info
-- **[templates/roi-calculator.xlsx](./templates/roi-calculator.xlsx)** - Calculate your AI ROI
+- **[templates/roi-calculator.csv](./templates/roi-calculator.csv)** - Calculate your AI ROI
+
+> **Pricing last verified**: February 2026. AI tool pricing changes frequently — verify current prices on provider websites before purchasing.
 
 **Ready to get prompts?** → [Read PROMPT-LIBRARY.md](./PROMPT-LIBRARY.md)

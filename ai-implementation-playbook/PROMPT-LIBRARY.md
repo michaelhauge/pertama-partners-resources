@@ -1179,6 +1179,167 @@ Create a spreadsheet with columns:
 
 ---
 
+## Advanced Techniques
+
+Once you're comfortable with the basic prompts above, these techniques will significantly improve your results.
+
+### Technique 1: Chain-of-Thought (Show Your Reasoning)
+
+**What it does**: Asks AI to explain its reasoning step by step, which produces more accurate and nuanced outputs.
+
+**When to use**: Complex analysis, decision-making, anything where you need to verify the AI's logic.
+
+**Template**:
+```
+Analyze [TOPIC/DOCUMENT/DATA] and show your reasoning step by step:
+
+1. First, identify the key factors
+2. Then, evaluate each factor
+3. Then, consider potential risks or downsides
+4. Finally, provide your recommendation with confidence level (high/medium/low)
+
+Be explicit about any assumptions you're making.
+```
+
+**Example** (competitive analysis):
+```
+Analyze our top 3 competitors in the [INDUSTRY] space. Show your reasoning:
+
+1. First, identify each competitor's core value proposition
+2. Then, compare their pricing, features, and target audience to ours
+3. Then, identify where we're stronger and where we're weaker
+4. Finally, recommend 2-3 positioning opportunities we should pursue
+
+Our product: [BRIEF DESCRIPTION]
+Our pricing: [PRICING]
+Our target customer: [DESCRIPTION]
+```
+
+**Why it works**: Without chain-of-thought, AI gives you a polished answer that may be wrong. With it, you can see *where* the reasoning breaks down and correct it.
+
+---
+
+### Technique 2: Role-Based Prompting
+
+**What it does**: Gives AI a specific persona with expertise, which produces more focused and expert-level output.
+
+**When to use**: When you need specialist-quality output (legal review, financial analysis, technical writing).
+
+**Template**:
+```
+You are a [SPECIFIC ROLE] with [X] years of experience in [DOMAIN].
+Your communication style is [STYLE DESCRIPTION].
+
+Your task: [WHAT YOU NEED]
+
+Context: [RELEVANT BACKGROUND]
+
+Constraints:
+- [CONSTRAINT 1]
+- [CONSTRAINT 2]
+```
+
+**Example** (contract review):
+```
+You are a commercial lawyer with 15 years of experience reviewing SaaS contracts in Southeast Asia. You are thorough but practical — you flag real risks, not theoretical ones.
+
+Your task: Review this vendor agreement and flag the top 5 risks for a 20-person company.
+
+For each risk, provide:
+- The specific clause (quote it)
+- Why it's risky (plain English, not legal jargon)
+- What to negotiate instead
+- Risk level: Critical / Important / Minor
+
+Context: We're a Singapore-based SaaS company, 20 employees, signing a 2-year contract with this vendor.
+
+[PASTE CONTRACT]
+```
+
+**Why it works**: Without a role, AI gives generic advice. With a specific role, it prioritizes the right concerns and uses the right level of detail.
+
+---
+
+### Technique 3: Structured Output (Tables, JSON, Specific Formats)
+
+**What it does**: Forces AI to output in a specific format that's immediately useful — no reformatting needed.
+
+**When to use**: Data extraction, comparison tables, content that feeds into spreadsheets or other tools.
+
+**Template**:
+```
+[YOUR REQUEST]
+
+Output format: [EXACT FORMAT DESCRIPTION]
+
+Example of desired output:
+[PROVIDE ONE EXAMPLE ROW/ENTRY]
+```
+
+**Example** (invoice data extraction):
+```
+Extract the following fields from this invoice and output as a CSV row:
+
+Fields: Vendor Name, Invoice Number, Date, Due Date, Line Items (description | quantity | unit price | total), Subtotal, Tax, Grand Total, Currency
+
+Output one CSV row per invoice. Use | as delimiter within the Line Items field.
+
+Example output:
+"Acme Corp","INV-2024-001","2024-03-15","2024-04-15","Widget A | 10 | $50 | $500 | Widget B | 5 | $100 | $500","$1000","$70","$1070","USD"
+
+[PASTE INVOICE]
+```
+
+**Why it works**: AI defaults to prose. If you need structured data, you must ask for it explicitly — and providing an example dramatically improves format consistency.
+
+---
+
+### Technique 4: Iterative Refinement (Build On Previous Output)
+
+**What it does**: Uses AI's first draft as a starting point, then refines through follow-up prompts. Produces much higher quality than a single prompt.
+
+**When to use**: Important content (client proposals, public-facing copy, strategic analysis) where quality matters more than speed.
+
+**Workflow**:
+```
+Step 1 (Generate): "Write a [CONTENT TYPE] about [TOPIC]. Include [KEY POINTS]."
+
+Step 2 (Critique): "Now critique what you just wrote. What's weak? What's missing? What would a [TARGET READER] find unconvincing?"
+
+Step 3 (Improve): "Rewrite the piece addressing those weaknesses. Specifically improve [AREA 1] and [AREA 2]."
+
+Step 4 (Polish): "Final pass: tighten the language, remove filler words, and ensure every paragraph adds value. Target [WORD COUNT]."
+```
+
+**Example** (sales proposal):
+```
+Step 1: "Write a 1-page proposal for [CLIENT NAME] explaining how our [PRODUCT] solves their [PROBLEM]. Include: problem statement, our solution, expected ROI, and next steps."
+
+Step 2: "Critique this proposal from the perspective of a skeptical CFO. What would they push back on? What's missing?"
+
+Step 3: "Rewrite addressing the CFO's concerns. Add specific numbers where I said 'significant improvement.' Make the ROI calculation transparent."
+
+Step 4: "Final polish: make it concise (under 500 words), professional, and end with a clear call to action. Remove any vague claims."
+```
+
+**Why it works**: A single prompt produces a B+ draft. Four iterations produce an A draft. The AI's self-critique in Step 2 catches issues you might miss.
+
+---
+
+### When to Use Which Technique
+
+| Situation | Best Technique | Why |
+|-----------|---------------|-----|
+| Analyzing complex documents | Chain-of-Thought | See the reasoning, catch errors |
+| Writing expert-level content | Role-Based | Gets specialist-quality output |
+| Extracting data from documents | Structured Output | Ready for spreadsheets immediately |
+| Creating important deliverables | Iterative Refinement | Each pass improves quality |
+| Quick daily tasks | Basic prompts (above) | Speed matters more than perfection |
+
+**Pro tip**: Combine techniques. Use Role-Based + Chain-of-Thought for complex analysis. Use Structured Output + Iterative Refinement for important data work.
+
+---
+
 ## Next Steps
 
 1. **Browse prompts** above and find 3-5 relevant to your business
