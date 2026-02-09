@@ -138,6 +138,9 @@ OpenClaw is open-source software with 150,000+ GitHub stars. It's been audited b
 
 - **[Mental Model](MENTAL-MODEL.md)** ⭐ NEW! - Understand the tech through business metaphors (read this first!)
 - **[Keys & Connectors](KEYS-AND-CONNECTORS.md)** ⭐ NEW! - SSH keys, API keys, permissions explained (no more setup confusion!)
+- **[How AI Thinks](HOW-AI-THINKS.md)** ⭐ NEW! - How LLMs actually work: training vs inference, hallucination, model sizes, and the AI vocabulary cheat sheet
+- **[Prompting Guide](PROMPTING-GUIDE.md)** ⭐ NEW! - Writing better prompts: the 5-element framework, examples, templates, and cost optimization
+- **[Your Data, Your Rules](YOUR-DATA-YOUR-RULES.md)** ⭐ NEW! - Data privacy for AI: provider policies, PDPA compliance, and your data decision tree
 - **[Security](SECURITY.md)** - Addressing all security concerns
 - **[Pricing](PRICING.md)** - Complete cost breakdown and calculator
 - **[Use Cases](USE-CASES.md)** - Real examples for SEA business leaders
@@ -330,6 +333,9 @@ This guide is provided under the MIT License. OpenClaw itself is licensed under 
 **Ready to get started?**
 
 - **First-time users** → [Mental Model](MENTAL-MODEL.md) (understand how it all works - 10 min read)
+- **Want to understand AI better?** → [How AI Thinks](HOW-AI-THINKS.md) (LLMs explained for business leaders - 15 min read)
+- **Want better AI results?** → [Prompting Guide](PROMPTING-GUIDE.md) (write prompts that save time and money - 12 min read)
+- **Worried about data privacy?** → [Your Data, Your Rules](YOUR-DATA-YOUR-RULES.md) (PDPA compliance and provider policies - 15 min read)
 - **Confused about SSH keys/APIs?** → [Keys & Connectors](KEYS-AND-CONNECTORS.md) (security concepts explained - 12 min read)
 - **Complete beginners** → [Managed Hosting Guide](guides/09-managed-hosting-providers.md) (easiest, 5-10 minutes)
 - **Technical users** → [Prerequisites](guides/01-prerequisites.md) (self-host, save money)
