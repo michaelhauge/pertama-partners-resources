@@ -137,6 +137,7 @@ OpenClaw is open-source software with 150,000+ GitHub stars. It's been audited b
 ### Core Guides
 
 - **[Mental Model](MENTAL-MODEL.md)** ⭐ NEW! - Understand the tech through business metaphors (read this first!)
+- **[Keys & Connectors](KEYS-AND-CONNECTORS.md)** ⭐ NEW! - SSH keys, API keys, permissions explained (no more setup confusion!)
 - **[Security](SECURITY.md)** - Addressing all security concerns
 - **[Pricing](PRICING.md)** - Complete cost breakdown and calculator
 - **[Use Cases](USE-CASES.md)** - Real examples for SEA business leaders
@@ -329,5 +330,6 @@ This guide is provided under the MIT License. OpenClaw itself is licensed under 
 **Ready to get started?**
 
 - **First-time users** → [Mental Model](MENTAL-MODEL.md) (understand how it all works - 10 min read)
+- **Confused about SSH keys/APIs?** → [Keys & Connectors](KEYS-AND-CONNECTORS.md) (security concepts explained - 12 min read)
 - **Complete beginners** → [Managed Hosting Guide](guides/09-managed-hosting-providers.md) (easiest, 5-10 minutes)
 - **Technical users** → [Prerequisites](guides/01-prerequisites.md) (self-host, save money)
