@@ -34,19 +34,25 @@ Many business leaders in Southeast Asia have heard about OpenClaw but are hesita
 
 ## Quick Start
 
-### Total Monthly Cost: $5-25
+### Total Monthly Cost: $5-84
 
-Yes, you can run a powerful AI assistant for less than the cost of lunch.
+Choose your comfort level: self-host for as low as $5/month, or use managed hosting for convenience.
 
-| Component | Cost |
-|-----------|------|
-| Hosting (optional) | $0-6/month |
-| LLM API | $5-20/month |
-| **Total** | **$5-26/month** |
+| Option | Hosting Cost | LLM API | Total |
+|--------|--------------|---------|-------|
+| **Self-Host (Mac/Free VPS)** | $0/month | $5-20/month | **$5-20/month** |
+| **Self-Host (Paid VPS)** | $4-6/month | $5-20/month | **$9-26/month** |
+| **Managed (xCloud)** | $24/month | $20-60/month | **$44-84/month** |
+| **Managed (OpenClawd.ai)** | $29/month | $20-60/month | **$49-89/month** |
 
 ### Installation Options
 
-1. **Local Mac** (Easiest, Maximum Privacy) - [Guide](guides/03-local-mac.md)
+**NEW! Managed Hosting (For Complete Beginners)**:
+1. **xCloud** (Easiest, 5 minutes) - $24/month - [Guide](guides/09-managed-hosting-providers.md#2-xcloud--best-for-beginners)
+2. **OpenClawd.ai** (Most Secure) - $29/month - [Guide](guides/09-managed-hosting-providers.md#1-openclawdai--recommended-for-security)
+
+**Self-Hosted Options**:
+1. **Local Mac** (Maximum Privacy, $0 hosting) - [Guide](guides/03-local-mac.md)
 2. **DigitalOcean 1-Click** (Easiest VPS) - [Guide](guides/05-digitalocean.md)
 3. **Oracle Cloud Free** (Advanced, $0 hosting) - [Guide](guides/04-oracle-cloud-free.md)
 4. **Contabo VPS** (Best Value) - [Guide](guides/06-contabo-vps.md)
@@ -62,7 +68,22 @@ Yes, you can run a powerful AI assistant for less than the cost of lunch.
 
 ## Step-by-Step Path
 
-### For Complete Beginners (Recommended)
+### For Complete Beginners - Managed Hosting (EASIEST) ⭐ NEW!
+
+**No technical skills required. Never touch Terminal.**
+
+1. **[Choose LLM Provider](guides/02-llm-providers.md)** - Set up Kimi K2 or DeepSeek (10 minutes)
+2. **[Sign up for xCloud](guides/09-managed-hosting-providers.md#step-by-step-signing-up-for-xcloud-easiest-option)** - Managed hosting (8 minutes)
+3. **Done!** - OpenClaw is running and connected to WhatsApp/Telegram
+
+**Total Time: ~18 minutes**
+**Monthly Cost: $44-84** ($24 hosting + $20-60 API)
+
+---
+
+### For Complete Beginners - Self-Hosted (Free Hosting)
+
+**Requires basic Terminal use. Takes longer but saves money.**
 
 1. **[Prerequisites](guides/01-prerequisites.md)** - Install Node.js, create accounts (15 minutes)
 2. **[Choose LLM Provider](guides/02-llm-providers.md)** - Set up Kimi K2 or DeepSeek (10 minutes)
@@ -70,6 +91,7 @@ Yes, you can run a powerful AI assistant for less than the cost of lunch.
 4. **[Connect WhatsApp](guides/07-whatsapp-setup.md)** - Use OpenClaw via WhatsApp (5 minutes)
 
 **Total Time: ~40 minutes**
+**Monthly Cost: $5-20** (API only)
 
 ### For Cost-Conscious Users
 
@@ -129,6 +151,7 @@ OpenClaw is open-source software with 150,000+ GitHub stars. It's been audited b
 6. **[Contabo VPS](guides/06-contabo-vps.md)** - Best value VPS
 7. **[WhatsApp Setup](guides/07-whatsapp-setup.md)** - Connect WhatsApp
 8. **[Telegram Setup](guides/08-telegram-setup.md)** - Connect Telegram
+9. **[Managed Hosting Providers](guides/09-managed-hosting-providers.md)** ⭐ NEW! - xCloud, OpenClawd.ai, DigitalOcean (for beginners)
 
 ### Automation Tools
 
@@ -302,4 +325,7 @@ This guide is provided under the MIT License. OpenClaw itself is licensed under 
 
 ---
 
-**Ready to get started? Head to [Prerequisites](guides/01-prerequisites.md) →**
+**Ready to get started?**
+
+- **Complete beginners** → [Managed Hosting Guide](guides/09-managed-hosting-providers.md) (easiest, 5-10 minutes)
+- **Technical users** → [Prerequisites](guides/01-prerequisites.md) (self-host, save money)
